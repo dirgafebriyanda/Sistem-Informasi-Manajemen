@@ -10,7 +10,7 @@
                         class=" text-decoration-none"
                         href="/posts?category=/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
                 @if ($post->image)
-                    <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}" class="card-img-top">
+                    <img src="{{ asset('storage/post-images/' . $post->image) }}" alt="{{ $post->category->name }}" class="card-img-top">
                 @else
                     {{-- <img src="https://source.unsplash.com/1200x400/?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="img-fluid"> --}}
                     <img src="{{ asset('img/pembalap.jpg') }}" alt="{{ $post->category->name }}" class="img-fluid">

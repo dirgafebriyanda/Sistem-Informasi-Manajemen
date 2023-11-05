@@ -1,4 +1,13 @@
-  
+  *{
+  font-family: "Poppins", sans-serif;
+
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
   .form-signin .form-floating:focus-within {
     z-index: 2;
   }
@@ -18,4 +27,61 @@
     border-radius: 0;
     margin-bottom: -1px;
   }
+  .garis::after{
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #e2e2e2;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.1s ease;
+}
+.garis:hover::after{
+  transform: scale(1);
+}
+.navbar-light .navbar-nav .nav-link.active {
+  color: #e2e2e2;
+  text-decoration-line: 1rem;
+  transform: scaleX(1);
+}
+.nav-link{
+  color: #e2e2e2;
+}
+.carousel-item {
+  height: 38rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 38rem;
+}
+.carousel-caption-left {
+      position: absolute;
+      left: 5%;
+      top: 35%;
+      transform: translateY(-50%);
+      color: #fff;
+      text-align: left;
+    }
+    .caption {
+      font-size: 5em;
+    }
+    .persuasif {
+      font-size: 3.2em;
+    }
+      .btn-warning:hover {
+      transform: scale(1.1); /* Membesarkan tombol saat dihover */
+    }
+      /* Media query untuk versi mobile */
+    @media (max-width: 768px) {
+      .caption {
+        font-size: 2.4em; /* Ukuran huruf yang lebih kecil untuk versi mobile */
+      }
+      .persuasif {
+        font-size: 1.7em; /* Ukuran huruf yang lebih kecil untuk versi mobile */
+      }
+    }
   

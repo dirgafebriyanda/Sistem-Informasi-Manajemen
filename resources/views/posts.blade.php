@@ -15,7 +15,7 @@
                 <div class="input-group mb-3">
                     <input type="text" name="search" class="form-control" placeholder="Search.."
                         value="{{ request('search') }}">
-                    <button type="submit" class="btn btn-danger">Search</button>
+                    <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i></button>
                 </div>
             </form>
         </div>

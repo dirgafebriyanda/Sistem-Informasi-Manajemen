@@ -1,27 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1 shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1 shadow sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="/">WPU Blog</a>
+        <a class="navbar-brand" href="/"><img src={{ "img/icon/putih.png" }} alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'home' ? 'active' : '' }}" href="/">Home</a>
+                    <a class="nav-link {{ $active === 'home' ? 'active' : '' }} garis" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }}" href="/about">About</a>
+                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="#service">Service</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'posts' ? 'active' : '' }}" href="/posts">Blog</a>
+                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }}"
+                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="#testimoni">Testimoni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $active === 'posts' ? 'active' : '' }} garis" href="/posts">Blog</a>
+                </li>
+                {{-- <li class="nav-item">
+                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis"
                         href="/categories">Categories</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis"
+                        href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis"
+                        href="#faq">Faq</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
+            {{-- <ul class="navbar-nav ms-auto">
                 @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -49,7 +66,7 @@
                             Login</a>
                     </li>
                 </ul>
-            @endauth
+            @endauth --}}
         </div>
     </div>
 </nav>
