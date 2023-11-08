@@ -38,6 +38,26 @@ Route::get('/layanan-kami', function () {
     ]);
 });
 
+Route::get('/galeri', function () {
+    return view('galeri', [
+        "active" => "galeri",
+        "title" => "galeri"
+    ]);
+});
+Route::get('/testimoni', function () {
+    return view('testimoni', [
+        "active" => "Testimoni",
+        "title" => "Testimoni"
+    ]);
+});
+
+Route::get('/kritik-dan-saran', function () {
+    return view('kritikdansaran', [
+        "active" => "Krtitik dan Saran",
+        "title" => "Kritik dan Saran"
+    ]);
+});
+
 Route::get('/tentang-kami', function () {
     return view('about', [
         "active" => "about",

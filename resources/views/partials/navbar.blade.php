@@ -33,12 +33,12 @@
                         href="/categories">Categories</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis" href="/kontak-kami">Kontak
+                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis" href="#kontak-kami">Kontak
                         Kami</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis"
-                        href="/kritik-&-saran">Kritik & Saran</a>
+                        href="/kritik-dan-saran">Kritik & Saran</a>
                 </li>
             </ul>
             {{-- <ul class="navbar-nav ms-auto">

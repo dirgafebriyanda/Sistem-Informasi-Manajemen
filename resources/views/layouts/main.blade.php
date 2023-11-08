@@ -36,7 +36,7 @@
     @yield('content')
 
     <!-- footer -->
-    <footer class="bg-dark text-white" id="contact">
+    <footer class="bg-dark text-white" id="kontak-kami">
         <div class="container ">
             <div class="row mt-5 mb-4">
                 <div class="col-md-4 mt-4 text-center">
