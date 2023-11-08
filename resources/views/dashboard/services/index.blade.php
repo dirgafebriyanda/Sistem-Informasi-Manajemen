@@ -35,7 +35,7 @@
                                 <td>{{ $service->service }}</td>
                                 <td>Rp. {{ $service->biaya }}</td>
                                 <td>
-                                    <a href="/dashboard/services/{{ $service->id }}/edit" class="btn btn-sm btn-warning" title="Edit"><span class="fa fa-edit"></span></a>
+                                    <a href="/dashboard/services/{{ $service->id }}/edit" class="btn btn-sm btn-success" title="Edit"><span class="fa fa-edit"></span></a>
                                     <form action="/dashboard/services/{{ $service->id }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf

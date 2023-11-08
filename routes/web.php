@@ -24,9 +24,21 @@ use App\Http\Controllers\ServiceController;
 |
 */
 
+
+Route::get('/page-not-found', function () {
+    return view('errors.404',);
+});
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/about', function () {
+Route::get('/layanan-kami', function () {
+    return view('service', [
+        "active" => "service",
+        "title" => "service"
+    ]);
+});
+
+Route::get('/tentang-kami', function () {
     return view('about', [
         "active" => "about",
         "title" => "About",
