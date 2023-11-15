@@ -109,6 +109,11 @@ html {
   height: 1.5rem;
   margin-top: 0.4rem;
 }
+
+.flip-horizontal {
+            transform: scaleX(-1);
+            display: inline-block;
+        }
       /* Media query untuk versi mobile */
     @media (max-width: 768px) {
       .caption {

@@ -39,6 +39,7 @@
     <footer class="bg-dark text-white" id="kontak-kami">
         <div class="container ">
             <div class="row mt-5 mb-4">
+                <h2 class="text-center text-light fw-bold mt-3">Hubungi kami</h2>
                 <div class="col-md-4 mt-4 text-center">
                     <i class="fa fa-map-marker-alt fa-2x text-danger"></i>
                     <p>Address</p>
@@ -72,8 +73,6 @@
                         class="fab fa-instagram"></i></a>
                 <a class="btn btn-dark border-light btn-floating m-1" href="#!" role="button"><i
                         class="fab fa-tiktok"></i></a>
-                <a class="btn btn-success border-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-whatsapp"></i></a>
             </section>
             <section class="text-center">
                 <form action="" class="row d-flex justify-content-center">

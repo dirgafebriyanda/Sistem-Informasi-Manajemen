@@ -10,7 +10,7 @@
 
     <title>BSKrearif | {{ $title }}</title>
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -45,11 +45,10 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
+                <div class="container-fluid ">
                     <!-- Content -->
                     @yield('content')
-
+                    </main>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -113,7 +112,15 @@
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     <script src="{{ asset('js/trix.umd.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
-
+    <script>
+        function hideAlert() {
+            $("#notif").slideUp(500,
+                function() {
+                    $(this).remove();
+                });
+        }
+        setTimeout(hideAlert, 3000);
+    </script>
 </body>
 
 </html>

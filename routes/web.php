@@ -5,13 +5,14 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,8 +69,8 @@ Route::get('/tentang-kami', function () {
     ]);
 });
 
-Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+Route::get('/blog-dan-berita', [PostController::class, 'index']);
+Route::get('/blog-dan-berita/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', function () {
     return view('categories', [
@@ -98,16 +99,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'index'])->middleware('auth');
 Route::post('/register', [RegisterController::class, 'store']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard.index', [
-        'title' => 'Dashbord',
-        'active' => 'dashboard'
-    ]);
-})->middleware('auth');
-
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
@@ -116,4 +109,8 @@ Route::get('/dashboard/categories/checkSlug', [DashboardCategoryController::clas
 Route::resource('/dashboard/categories', DashboardCategoryController::class)->except('show')->middleware('admin');
 
 Route::resource('/dashboard/services', ServiceController::class)->middleware('auth');
-Route::resource('/dashboard/galleries', GalleryController::class)->middleware('auth');;
+Route::resource('/dashboard/galleries', GalleryController::class)->middleware('auth');
+
+Route::resource('/dashboard/users', UserController::class)->middleware('admin');
+
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');;

@@ -14,27 +14,31 @@ class PostController extends Controller
         $title = '';
         if (request('category')) {
             $category = Category::firstWhere('slug', request('category'));
-            $title = ' in ' . $category->name;
+            $title = ' Kategori ' . $category->name;
         }
         if (request('author')) {
             $author = User::firstWhere('username', request('author'));
-            $title = ' by ' . $author->name;
+            $title = ' Oleh ' . $author->name;
         }
+
+        $posts = Post::latest()
+            ->filter(request(['search', 'category', 'author']))
+            ->paginate(7)
+            ->withQueryString();
+
         return view('posts', [
-            "title" => "All Posts" . $title,
-            "active" => "posts",
-            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString()
+            'title' => 'Blog & Berita' . $title,
+            'active' => 'blog',
+            'posts' => $posts,
         ]);
     }
+
     public function show(Post $post)
     {
-        return view(
-            'post',
-            [
-                "title" => "Single Post",
-                "active" => "posts",
-                "post" => $post
-            ]
-        );
+        return view('post', [
+            'title' => 'Blog & Berita',
+            'active' => 'blog',
+            'post' => $post,
+        ]);
     }
 }

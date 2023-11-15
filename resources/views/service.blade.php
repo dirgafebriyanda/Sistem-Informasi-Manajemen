@@ -152,7 +152,8 @@
                     <div class="card-body text-center">
                         <i class="fas fa-leaf fa-4x mb-3"></i> <!-- Ikon daun dari Font Awesome -->
                         <h5 class="card-title">Menambah Berat Daun</h5>
-                        <p class="card-text">Layanan menambah berat daun raket bulu tangkis untuk meningkatkan performa
+                        <p class="card-text">Layanan menambah berat daun raket bulu tangkis & tenis untuk meningkatkan
+                            performa
                             pukulan.</p>
                         <div>
                             <i class="fas fa-star text-warning"></i>
@@ -171,7 +172,7 @@
                         <i class="fas fa-redo fa-4x mb-3"></i> <!-- Ikon reset dari Font Awesome -->
                         <h5 class="card-title">Ganti atau Stel Ulang Senar</h5>
                         <p class="card-text">Layanan penggantian atau penyetelan ulang senar sesuai kebutuhan pemain
-                            bulu tangkis.</p>
+                            bulu tangkis & tenis.</p>
                         <div>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
@@ -188,7 +189,7 @@
                     <div class="card-body text-center">
                         <i class="fas fa-feather fa-4x mb-3"></i> <!-- Ikon mata ayam dari Font Awesome -->
                         <h5 class="card-title">Ganti Mata Ayam</h5>
-                        <p class="card-text">Layanan penggantian mata ayam pada senar raket bulu tangkis.</p>
+                        <p class="card-text">Layanan penggantian mata ayam pada senar raket bulu tangkis & tenis.</p>
                         <div>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
@@ -207,7 +208,8 @@
                     <div class="card-body text-center">
                         <i class="fas fa-tools fa-4x mb-3"></i> <!-- Ikon alat dari Font Awesome -->
                         <h5 class="card-title">Servis Patah Tanpa Klem</h5>
-                        <p class="card-text">Layanan perbaikan raket bulu tangkis yang patah tanpa memerlukan klem.</p>
+                        <p class="card-text">Layanan perbaikan raket bulu tangkis & tenis yang patah tanpa memerlukan klem.
+                        </p>
                         <div>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
@@ -241,7 +243,7 @@
                     <div class="card-body text-center">
                         <i class="fas fa-grip-horizontal fa-4x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
                         <h5 class="card-title">Ganti atau Stel Grip</h5>
-                        <p class="card-text">Layanan penggantian atau penyetelan ulang grip raket bulu tangkis.</p>
+                        <p class="card-text">Layanan penggantian atau penyetelan ulang grip raket bulu tangkis & tenis.</p>
                         <div>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>

@@ -14,13 +14,17 @@
                 <img src="{{ asset('img/gambar/banner-mobile.png') }}" class="d-md-none w-100 h-100 gradient" alt="Gambar 1" />
                 <img src="{{ asset('img/gambar/banner-desktop.png') }}" class="d-none d-md-block w-100 h-100 gradient"
                     alt="Gambar 1" />
-                <div class="carousel-caption carousel-caption-left shadow-sm">
-                    <h1 class="fw-bold caption">BENGKEL <span class="text-warning">SPORT</span> KREATIF</h1>
-                    <p class="persuasif fw-bold">JASA SERVICE RAKET BADMINTON DAN TENNIS</p>
-                    <p class="fw-bold"><span class="text-warning">Percayakan Raketmu pada Ahli : </span><br>Dengan harga
-                        yang terjangkau tetap dengan hasil yang berkualitas</p>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#biayaModal"
-                        class="btn btn-warning btn-custome btn-lg text-light fw-bold mt-3">CEK BIAYA SERVICE</a>
+                <div class="carousel-caption carousel-caption-left shadow">
+                    <h1 class="fw-bold caption">BENGKEL <span class="text-warning flip-horizontal">SPORT</span>
+                        KREATIF</h1>
+                    <p class="persuasif fw-bold">JASA SERVIS RAKET BULUTANGKIS DAN TENNIS</p>
+                    <p class="fw-bold"><span class="text-warning">Percayakan Raketmu pada Kami : </span><br>Dengan harga
+                        yang terjangkau, anda tetap puas dengan hasilnya. Tunggu apa lagi, buruan !!!</p>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#formPemesanan"
+                        class="btn btn-warning btn-custome text-light fw-bold mt-3">Pesan Sekarang</a>
+                    <a href="https://wa.me/6285266528221?text=Saya%20ingin%20konsultasi%20tentang..."
+                        class="btn btn-danger btn-custome text-light fw-bold mt-3">Konsultasi</a>
+
                 </div>
             </div>
         </div>
@@ -48,7 +52,7 @@
 
         <div class="row mt-5">
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <i class="fas fa-headset fa-3x mb-3"></i>
                         <h5 class="card-title">Pelayanan Pelanggan 24/7</h5>
@@ -61,7 +65,7 @@
             <!-- Menambahkan ikon Font Awesome ke alasan lainnya -->
             <!-- Anda dapat mengganti ikon dengan ikon Font Awesome lainnya sesuai kebutuhan -->
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <i class="fas fa-award fa-3x mb-3"></i>
                         <h5 class="card-title">Kualitas Unggul</h5>
@@ -71,7 +75,7 @@
             </div>
 
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <i class="fas fa-lightbulb fa-3x mb-3"></i>
                         <h5 class="card-title">Inovasi Terbaru</h5>
@@ -81,7 +85,7 @@
             </div>
 
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <i class="fas fa-users fa-3x mb-3"></i>
                         <h5 class="card-title">Tim Profesional</h5>
@@ -91,7 +95,7 @@
             </div>
 
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <i class="fas fa-hand-holding-heart fa-3x mb-3"></i>
                         <h5 class="card-title">Kemudahan Penggunaan</h5>
@@ -102,7 +106,7 @@
             </div>
 
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <i class="fas fa-shield-alt fa-3x mb-3"></i>
                         <h5 class="card-title">Keandalan</h5>
@@ -115,8 +119,8 @@
     </div>
     <!-- akhir alasan -->
 
-    <!-- service -->
-    <section id="service">
+    <!-- layanan -->
+    <section id="layanan">
         <div class="container-fluid">
             <div class="row  justify-content-center">
                 <div class="col">
@@ -124,212 +128,268 @@
                 </div>
             </div>
             <div class="row justify-content-center fs-5" style="overflow: hidden">
-                <div class="col-md-6 mt-2" data-aos="fade-right">
-                    <div class="card shadow h-100" data-aos="zoom-in">
-                        <div class="card bg-dark text-white ">
-                            <img src="{{ asset('img/service-tennis.png') }}" class="card-img "
-                                alt="{{ asset('img/badminton.jpg') }}">
-                            <div class="card-img-overlay d-flex align-items-center p-0">
-                                <h5 class="card-title text-center fw-bold flex-fill p-3 fs-3 mt-0 text-decoration-none text-light"
-                                    style="background-color: rgba(0,0,0,.7)">Servis Raket Tenis</h5>
+                <div class="row mt-3">
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-leaf fa-2x mb-3"></i> <!-- Ikon daun dari Font Awesome -->
+                                <h5 class="card-title fw-bold">Menambah Berat Daun</h5>
+                                <p class="card-text">Layanan menambah berat daun raket bulu tangkis untuk meningkatkan
+                                    performa
+                                    pukulan.</p>
+                                <p class="card-text fw-bold">Rp. 20.000 - Rp.
+                                    50.000</p>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-stroopwafel fa-2x mb-3"></i> <!-- Ikon reset dari Font Awesome -->
+                                <h5 class="card-title fw-bold">Ganti atau Stel Ulang Senar</h5>
+                                <p class="card-text">Layanan penggantian atau penyetelan ulang senar bulu tangkis & tenis
+                                    sesuai kebutuhan.</p>
+                                <p class="card-text fw-bold">Rp. 35.000 - Rp.
+                                    45.000</p>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-low-vision fa-2x mb-3"></i> <!-- Ikon mata ayam dari Font Awesome -->
+                                <h5 class="card-title fw-bold">Ganti Mata Ayam</h5>
+                                <p class="card-text">Layanan penggantian mata ayam pada senar raket bulu tangkis & tenis.
+                                </p>
+                                <p class="card-text fw-bold">Rp. 15.000 - Rp.
+                                    35.000</p>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-tools fa-2x mb-3"></i> <!-- Ikon alat dari Font Awesome -->
+                                <h5 class="card-title fw-bold">Servis Patah Tanpa Klem</h5>
+                                <p class="card-text">Layanan perbaikan raket bulu tangkis yang patah tanpa klem.</p>
+                                <p class="card-text fw-bold">Rp. 75.000 = Rp.
+                                    100.000</p>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-grip-lines-vertical fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
+                                <h5 class="card-title fw-bold">Ganti atau Stel Grip</h5>
+                                <p class="card-text">Layanan penggantian atau penyetelan ulang grip raket bulu tangkis.</p>
+                                <p class="card-text fw-bold">Rp. 35.000</p>
+                                <div class="card-text">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-ring fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
+                                <h5 class="card-title fw-bold">Ganti Tutup Grip</h5>
+                                <p class="card-text">Layanan penggantian tutup grip raket bulu tangkis & tenis.</p>
+                                <p class="card-text fw-bold">Rp. 25.000 - Rp.
+                                    35.000</p>
+                                <div class="card-text">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mt-2" data-aos="fade-left">
-                    <div class="card shadow h-100" data-aos="zoom-in">
-                        <div class="card bg-dark text-white ">
-                            <img src="{{ asset('img/service-badminton.png') }}" class="card-img "
-                                alt="{{ asset('img/badminton.jpg') }}">
-                            <div class="card-img-overlay d-flex align-items-center p-0">
-                                <h5 class=" card-title text-center fw-bold flex-fill p-3 fs-3 mt-0 text-decoration-none text-light"
-                                    style="background-color: rgba(0,0,0,.7)">Servis Raket Bulutangkis</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
     </section>
-    <!-- akhir service -->
-
-    <!-- Tentang desktop -->
-    <section id="about">
-        <div class="container-fluid p-3 d-none d-md-block">
-            <div class="row mt-5 justify-content-center">
-                <div class="col">
-                    <h2 class="fw-bold text-center">Tentang Kami</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center fs-5 " style="overflow: hidden">
-                <div class="col-md-4 mt-2" data-aos="fade-right">
-                    <img class="img-fluid" src="{{ asset('img/about-tennis.png') }}" alt="">
-                </div>
-                <div class="col-md-4 mt-2" data-aos="fade-right">
-                    <p>
-                    <h5 class="fw-bold">Servis Raket Tenis</h5>
-                    Dengan staf profesional yang memiliki pengalaman, kami menghadirkan layanan yang berkualitas tinggi
-                    dengan keahlian teknis yang tinggi pula. Kami tidak hanya memperbaiki raket; kami merawatnya dengan
-                    sepenuh hati agar mencerminkan preferensi Anda serta menyesuaikan diri dengan gaya permainan unik yang
-                    Anda miliki.
-                    </p>
-                    <p>
-                        Melalui layanan kami, Anda tidak hanya mendapatkan perbaikan raket, namun juga solusi terbaik yang
-                        disesuaikan dengan gaya permainan Anda.
-                    </p>
-                </div>
-            </div>
-            <div class="row justify-content-center fs-5   text-end" style="overflow: hidden">
-                <div class="col-md-4 mt-2" data-aos="fade-left">
-                    <p>
-                    <h5 class="fw-bold">Service Raket Bulutangkis</h5>
-                    Service raket badminton menjadi fondasi krusial bagi seorang pemain dalam mengejar kemenangan. Kami,
-                    sebagai penyedia layanan service raket badminton, memahami betapa pentingnya raket yang handal untuk
-                    mencapai performa optimal di lapangan. Dengan fokus pada kualitas, ketelitian, dan pengalaman, kami siap
-                    mendukung para pemain dalam menghadirkan performa terbaik mereka.
-                    </p>
-                    <p>
-                        Melalui layanan kami, pemain tenis dapat mempercayakan raket mereka kepada kami dan berkonsentrasi
-                        sepenuhnya pada permainan.
-                    </p>
-                </div>
-                <div class="col-md-4 mt-2" data-aos="fade-right">
-                    <img class="img-fluid" src="{{ asset('img/about-badminton.png') }}" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- akhir Tentang desktop -->
-
-    <!-- Tentang mobile -->
-    <section id="about">
-        <div class="container-fluid d-md-none ">
-            <div class="row text-center">
-                <div class="col">
-                    <h2 class="fw-bold text-center">Tentang Kami</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center fs-5  mb-2" style="overflow: hidden">
-                <div class="col-md-4" data-aos="fade-right">
-                    <img class="img-fluid" src="{{ asset('img/about-tennis.png') }}" alt="">
-                </div>
-                <div class="col-md-4 mt-2" data-aos="fade-right">
-                    <p>
-                    <h5 class="fw-bold">Servis Raket Tenis</h5>
-                    Dengan staf profesional yang memiliki pengalaman, kami menghadirkan layanan yang berkualitas tinggi
-                    dengan keahlian teknis yang tinggi pula. Kami tidak hanya memperbaiki raket; kami merawatnya dengan
-                    sepenuh hati agar mencerminkan preferensi Anda serta menyesuaikan diri dengan gaya permainan unik yang
-                    Anda miliki.
-                    </p>
-                    <p>
-                        Melalui layanan kami, Anda tidak hanya mendapatkan perbaikan raket, namun juga solusi terbaik yang
-                        disesuaikan dengan gaya permainan Anda.
-                    </p>
-                </div>
-            </div>
-            <div class="row justify-content-center fs-5  mb-2" style="overflow: hidden">
-
-                <div class="col-md-4 mt-2" data-aos="fade-right">
-                    <img class="img-fluid" src="{{ asset('img/about-badminton.png') }}" alt="">
-                </div>
-                <div class="col-md-4 mt-2" data-aos="fade-left">
-                    <p>
-                    <h5 class="fw-bold">Servis Raket Bulutangkis</h5>
-                    Service raket badminton menjadi fondasi krusial bagi seorang pemain dalam mengejar kemenangan. Kami,
-                    sebagai penyedia layanan service raket badminton, memahami betapa pentingnya raket yang handal untuk
-                    mencapai performa optimal di lapangan. Dengan fokus pada kualitas, ketelitian, dan pengalaman, kami siap
-                    mendukung para pemain dalam menghadirkan performa terbaik mereka.
-                    </p>
-                    <p>
-                        Melalui layanan kami, pemain tenis dapat mempercayakan raket mereka kepada kami dan berkonsentrasi
-                        sepenuhnya pada permainan.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- akhir Tentang mobile-->
+    <!-- akhir layanan -->
 
     <!-- Galeri -->
     <section id="gallery" class="mb-4">
-        <div class="container-fluid p-3">
-            <div class="row mt-5 text-center">
+        <div class="container-fluid">
+            <div class="row mt-4 text-center">
                 <div class="col">
                     <h2 class="fw-bold">Galeri</h2>
                 </div>
             </div>
-            <div class="row mt-5 fs-5 justify-content-center" style="overflow: hidden">
-                @if ($galleries->isEmpty())
-                    <!-- Tampilkan gambar default jika daftar galeri kosong -->
-                    <div class="col-md-4 mb-4" data-aos="zoom-in-down">
-                        <img src="{{ asset('img/1.png') }}" alt="Gambar Default" class="w-100 h-100 img-thumbnail" />
-                    </div>
-                    <div class="col-md-4 mb-4" data-aos="zoom-in-down">
-                        <img src="{{ asset('img/2.png') }}" alt="Gambar Default" class="w-100 h-100 img-thumbnail" />
-                    </div>
-                    <div class="col-md-4 mb-4" data-aos="zoom-in-down">
-                        <img src="{{ asset('img/3.png') }}" alt="Gambar Default" class="w-100 h-100 img-thumbnail" />
-                    </div>
-                    <div class="col-md-4 mb-4" data-aos="zoom-in-down">
-                        <img src="{{ asset('img/4.png') }}" alt="Gambar Default" class="w-100 h-100 img-thumbnail" />
-                    </div>
-                    <div class="col-md-4 mb-4" data-aos="zoom-in-down">
-                        <img src="{{ asset('img/5.png') }}" alt="Gambar Default" class="w-100 h-100 img-thumbnail" />
-                    </div>
-                    <div class="col-md-4 mb-4" data-aos="zoom-in-down">
-                        <img src="{{ asset('img/6.png') }}" alt="Gambar Default" class="w-100 h-100 img-thumbnail" />
-                    </div>
-                @else
-                    <!-- Tampilkan galeri jika tidak kosong -->
-                    @foreach ($galleries as $gallery)
-                        <div class="col-md-4 mb-4" data-aos="zoom-in-down">
-                            <img src="{{ asset('images/' . $gallery->image) }}" alt="{{ $gallery->name }}"
-                                class="w-100 h-100 img-thumbnail" />
-                        </div>
-                    @endforeach
-                @endif
-
+            <div class="row mt-4 fs-5 justify-content-center" style="overflow: hidden">
+                <div class="col-md-4 mb-4" data-aos="zoom-in-down">
+                    <img src="{{ asset('img/1.png') }}" alt="Gambar Default"
+                        class="w-100 h-100 img-thumbnail bg-dark shadow" />
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in-down">
+                    <img src="{{ asset('img/2.png') }}" alt="Gambar Default"
+                        class="w-100 h-100 img-thumbnail bg-dark shadow" />
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in-down">
+                    <img src="{{ asset('img/3.png') }}" alt="Gambar Default"
+                        class="w-100 h-100 img-thumbnail bg-dark shadow" />
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in-down">
+                    <img src="{{ asset('img/4.png') }}" alt="Gambar Default"
+                        class="w-100 h-100 img-thumbnail bg-dark shadow" />
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in-down">
+                    <img src="{{ asset('img/5.png') }}" alt="Gambar Default"
+                        class="w-100 h-100 img-thumbnail bg-dark shadow" />
+                </div>
             </div>
         </div>
     </section>
     <!-- Akhir Galeri -->
 
-    <!-- modal -->
-    <div class="modal fade" id="biayaModal" data-bs-backdrop="static" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="modal-header d-flex justify-content-center">
-                    <h5 class="modal-title fw-bold" id="exampleModalLabel">DAFTAR BIAYA JASA PERBAIKAN,SERVICE
-                        ,PEMASANGAN GRIB DAN SENAR RAKET BADMINTON DAN TENNIS</h5>
+    <!-- Testimoni -->
+    <section id="testimoni" class="mb-4">
+        <div class="container-fluid p-3">
+            <div class="row mt-5 text-center">
+                <div class="col">
+                    <h2 class="fw-bold">Apa kata mereka yang sudah menggunakan jasa kami?</h2>
                 </div>
-                <div class="modal-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr class="bg-dark text-light fw-bold">
-                                    <th scope="col">No</th>
-                                    <th scope="col">Service</th>
-                                    <th scope="col">Biaya</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($services as $service)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $service->service }}</td>
-                                        <td>Rp. {{ $service->biaya }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> Busyra Sidi</p>
+                            <p class="card-text">Pelayanan cepat dan sangat memuaskan! Saya sangat puas dengan
+                                hasilnya.</p>
+                            <span class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> M. Iswan Achir</p>
+                            <p class="card-text">Proses perbaikan cepat dan tanpa masalah. Saya puas sekali, Terima kasih!
+                            </p>
+                            <span class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> Musa Harahap</p>
+                            <p class="card-text">Hasil perbaikan yang luar biasa. Saya sangat puas sekali, Terima kasih!
+                            </p>
+                            <span class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Akhir Testimoni -->
+
+    <!-- Modal Pemesanan-->
+    <div class="modal fade" id="formPemesanan" tabindex="-1" aria-labelledby="formPemesananLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Form Pemesanan</h1>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm">
+                        <input type="text" class="form-control mb-2" id="nama" name="nama"
+                            placeholder="Nama Lengkap" required>
+                        <input type="text" class="form-control mb-2" id="kontak" name="kontak"
+                            placeholder="Email atau No Hp" required>
+                        <textarea id="pesan" class="form-control mb-2" name="pesan" rows="4" placeholder="Pesan" required></textarea>
+                    </form>
+                </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-dark" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-success" onclick="kirimPesan()">Kirim</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- akhir modal -->
+
+    <script>
+        function kirimPesan() {
+            var nama = document.getElementById('nama').value;
+            var kontak = document.getElementById('kontak').value;
+            var pesan = document.getElementById('pesan').value;
+
+            // Ganti nomor WhatsApp sesuai kebutuhan
+            var nomorWhatsApp = '6285266528221';
+
+            // Membuat link WhatsApp dengan pesan
+            var linkWhatsApp = 'https://wa.me/' + nomorWhatsApp + '?text=' + encodeURIComponent('Nama: ' + nama +
+                '\nKontak: ' + kontak + '\nPesan: ' + pesan);
+
+            // Buka link WhatsApp
+            window.open(linkWhatsApp, '_blank');
+
+            // Jika Anda ingin mengirim formulir ke server, tambahkan kode AJAX di sini
+            // ...
+
+            // Bersihkan formulir setelah dikirim
+            document.getElementById('orderForm').reset();
+        }
+    </script>
 @endsection

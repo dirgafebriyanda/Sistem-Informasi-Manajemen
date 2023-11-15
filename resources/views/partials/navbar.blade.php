@@ -9,36 +9,34 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'home' ? 'active' : '' }} garis" href="/">Beranda</a>
+                    <a class="nav-link {{ $active === 'beranda' ? 'active' : '' }} garis" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="/layanan-kami">Layanan
-                        Kami</a>
+                    <a class="nav-link {{ $active === 'layanan' ? 'active' : '' }} garis"
+                        href="/layanan-kami">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="/tentang-kami">Tentang
-                        Kami</a>
+                    <a class="nav-link {{ $active === 'galeri' ? 'active' : '' }} garis" href="/galeri">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="/galeri">Galeri</a>
+                    <a class="nav-link {{ $active === 'testimoni' ? 'active' : '' }} garis"
+                        href="/testimoni">Testimoni</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }} garis" href="/testimoni">Testimoni</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ $active === 'posts' ? 'active' : '' }} garis" href="/posts">Blog</a>
+                    <a class="nav-link {{ $active === 'blog' ? 'active' : '' }} garis" href="/blog-dan-berita">Blog &
+                        Berita</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis"
                         href="/categories">Categories</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis" href="#kontak-kami">Kontak
-                        Kami</a>
+                    <a class="nav-link {{ $active === 'tentang' ? 'active' : '' }} garis"
+                        href="/tentang-kami">Tentang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} garis"
-                        href="/kritik-dan-saran">Kritik & Saran</a>
+                    <a class="nav-link {{ $active === 'kritik' ? 'active' : '' }} garis" href="/kritik-dan-saran">Kritik
+                        & Saran</a>
                 </li>
             </ul>
             {{-- <ul class="navbar-nav ms-auto">

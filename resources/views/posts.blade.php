@@ -1,9 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1 class="mb-3 text-center">{{ $title }}</h1>
-
-    <div class="row justify-content-center mb-3">
+    <div class="row justify-content-center mb-3 mt-3">
         <div class="col-md-6">
             <form action="/posts" method="get">
                 @if (request('category'))
@@ -28,16 +26,16 @@
                 <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}"
                     class="img-fluid">
             @else
-                <img src="{{ asset('img/pembalap.jpg') }}" alt="{{ $posts[0]->category->name }}" class="img-fluid mt-3">
-                {{-- <img src="https://source.unsplash.com/1200x400/?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}"> --}}
+                <img src="{{ asset('img/gambar/banner-desktop.png') }}" alt="{{ $posts[0]->category->name }}"
+                    class="img-fluid mt-3">
             @endif
             <div class="card-body text-center">
                 <h3 class="card-title"><a class=" text-decoration-none text-dark"
                         href="/posts/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h3>
                 <p>
-                    <small class="text-muted">By. <a class=" text-decoration-none"
-                            href="/posts?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a
-                            class=" text-decoration-none"
+                    <small class="text-muted">Ditulis Oleh : <a class=" text-decoration-none"
+                            href="/posts?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a>
+                        Kategori <a class=" text-decoration-none"
                             href="/posts?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
                         {{ $posts[0]->created_at->diffForHumans() }}</small>
                 </p>
@@ -62,15 +60,14 @@
                                 <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}"
                                     class="card-img-top">
                             @else
-                                <img src="{{ asset('img/pembalap.jpg') }}" class="card-img-top"
+                                <img src="{{ asset('img/gambar/banner-desktop.png') }}" class="card-img-top"
                                     alt="{{ $post->category->name }}">
-                                {{-- <img src="https://source.unsplash.com/1200x400/?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}"> --}}
                             @endif
 
                             <div class="card-body">
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <p>
-                                    <small class="text-muted">By. <a class=" text-decoration-none"
+                                    <small class="text-muted">Ditulis Oleh : <a class=" text-decoration-none"
                                             href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a>
                                         {{ $post->created_at->diffForHumans() }}</small>
                                 </p>
@@ -85,7 +82,32 @@
     @else
         <p class="text-center fs-4">No post found.</p>
     @endif
-    <div class="d-flex justify-content-end">
-        {{ $posts->links() }}
+    <div class="d-flex card-footer justify-content-center ">
+        <!-- Desktop Pagination -->
+        <nav class="d-none d-md-block" aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="{{ $posts->previousPageUrl() }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; Previous</span>
+                    </a>
+                </li>
+                {{ $posts->links() }}
+                <li class="page-item">
+                    <a class="page-link" href="{{ $posts->nextPageUrl() }}" aria-label="Next">
+                        <span aria-hidden="true">Next &raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Pagination -->
+        <nav class="d-md-none" aria-label="Page navigation">
+            <div class="text-center">
+                <p>Halaman ke {{ $posts->currentPage() }} dari {{ $posts->lastPage() }}</p>
+            </div>
+            <div class="pagination justify-content-center">
+                <p>{{ $posts->links('pagination::simple-bootstrap-4') }}</p>
+            </div>
+        </nav>
     </div>
 @endsection

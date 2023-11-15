@@ -62,7 +62,7 @@ class DashboardPostController extends Controller
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validatedData);
-        $validatedData['image'] = $request->file('image')->storeAs('public/post-images', $request->file('image')->getClientOriginalName());
+        return redirect('/dashboard/posts')->with('success', 'New post has bean added!');
     }
 
     /**
@@ -127,7 +127,7 @@ class DashboardPostController extends Controller
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::where('id', $post->id)->update($validatedData);
-        return redirect('/dashboard/categories')->with('success', 'New post has bean updated!');
+        return redirect('/dashboard/posts')->with('success', 'New post has bean updated!');
     }
 
     /**
