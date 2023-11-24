@@ -111,7 +111,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     <script src="{{ asset('js/trix.umd.min.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
+    {{-- <script src="{{ asset('js/script.js') }}"></script> --}}
     <script>
         function hideAlert() {
             $("#notif").slideUp(500,

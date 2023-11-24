@@ -12,8 +12,7 @@
                     <a class="nav-link {{ $active === 'beranda' ? 'active' : '' }} garis" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'layanan' ? 'active' : '' }} garis"
-                        href="/layanan-kami">Layanan</a>
+                    <a class="nav-link {{ $active === 'layanan' ? 'active' : '' }} garis" href="/layanan">Layanan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'galeri' ? 'active' : '' }} garis" href="/galeri">Galeri</a>
@@ -31,8 +30,7 @@
                         href="/categories">Categories</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'tentang' ? 'active' : '' }} garis"
-                        href="/tentang-kami">Tentang</a>
+                    <a class="nav-link {{ $active === 'tentang' ? 'active' : '' }} garis" href="/tentang">Tentang</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'kritik' ? 'active' : '' }} garis" href="/kritik-dan-saran">Kritik

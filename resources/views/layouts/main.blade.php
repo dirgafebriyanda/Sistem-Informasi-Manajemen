@@ -1,25 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="Jasa Service Raket Terbaik | Bengkel Sport Kreatif">
-    <meta property="og:description"
-        content="Jasa layanan profesional untuk perbaikan dan perawatan raket badminton dan tenis. Layanan kustomisasi, ganti grip, dan penyetelan raket. Hubungi kami untuk layanan berkualitas.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.bskreatif.com/jasa-service-raket">
-    <meta property="og:image" content="https://www.bskreatif.test/img/gambar/slide1m.jpg">
-    <meta name="description"
-        content="Jasa profesional untuk perbaikan dan perawatan raket badminton dan tenis. Layanan kami meliputi penyetelan, ganti grip, perbaikan kerusakan, dan kustomisasi raket agar sesuai dengan preferensi Anda. Hubungi kami untuk layanan handal dan berkualitas.">
+    <meta name="google-site-verification" content="WKij0qlmTeTVDvFcp2-2NE9jQMPhnX4CRjiCvjTMsyI" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="publisher" content="BSKreatif">
+    <meta name="distribution" content="global">
+    <meta name="webcrawlers" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="spiders" content="all">
+    <meta name="copyright" content="BSKreatif">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="jasa raket, badminton, tenis, perbaikan raket, ganti grip, penyetelan raket">
-    <link rel="canonical" href="https://www.bskreatif.com/jasa-service-raket">
-
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
-
-
-    <title>Jasa Service Raket Terbaik | {{ $title }}</title>
+    <meta name="description"
+        content="BSKreatif. bskreatif. bengkel sport kreatif. Raket patah. Raket tenis. Raket bulutangkis. Ganti senar. Ganti senar raket tenis. Ganti senar raket bulutangkis. service raket patah tanpa klem. Raket. Bulutangkis. Badmiton. Tennis. Tenis. Stel senar raket. Tempat service raket tenis terbaik. Tempat service raket bulutangkis terbaik. Melayani ke seluruh Indonesia.">
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:description" content="" />
+    <meta property="og:title" content="Bengkel Sport Kreatif | Jasa Memeperbaiki Raket">
+    <meta property="og:site_name" content="Bskreatif" />
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bskreatif.com/">
+    <meta property="og:image" content="https://www.bskreatif.test/img/gambar/slide1m.jpg">
+    <link rel="canonical" href="https://www.bskreatif.com/">
+    <link rel="icon" type="image/png" sizes="228x228" href="{{ asset('favicon.png') }}">
+    <title>{{ $title }} | Jasa Memeperbaiki Raket</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
         rel="stylesheet" />
@@ -27,6 +35,7 @@
 
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}" />
 </head>
 
 <body>
@@ -38,7 +47,7 @@
     <!-- footer -->
     <footer class="bg-dark text-white" id="kontak-kami">
         <div class="container ">
-            <div class="row mt-5 mb-4">
+            <div class="row mt-2 mb-4">
                 <h2 class="text-center text-light fw-bold mt-3">Hubungi kami</h2>
                 <div class="col-md-4 mt-4 text-center">
                     <i class="fa fa-map-marker-alt fa-2x text-danger"></i>
@@ -116,6 +125,15 @@
         target="_blank" class="btn text-green btn-sm rounded-circle" id="whatsapp">
         <i class="fab fa-whatsapp text-light fa-2x text-center"></i>
     </a>
+
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 2000,
+        });
+    </script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>

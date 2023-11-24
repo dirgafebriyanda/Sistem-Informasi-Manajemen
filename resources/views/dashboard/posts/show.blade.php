@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-5 justify-content-center mt-3">
             <div class="col-md-8">
                 <h1 class="mb-3">{{ $post->title }}</h1>
 
@@ -18,12 +18,12 @@
                 </form>
                 @if ($post->image)
                     <div>
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}"
+                        <img src="{{ asset('post-images/' . $post->image) }}" alt="{{ $post->category->name }}"
                             class="img-fluid mt-3">
                     </div>
                 @else
-                    <img src="{{ asset('img/pembalap.jpg') }}" alt="{{ $post->category->name }}" class="img-fluid mt-3">
-                    {{-- <img src="https://source.unsplash.com/1200x400/?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="img-fluid"> --}}
+                    <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
+                        class="img-fluid mt-3 bg-dark">
                 @endif
                 <article class="my-3 fs-5" style="text-align: justify">
                     {!! $post->body !!}

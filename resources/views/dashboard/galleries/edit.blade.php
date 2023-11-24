@@ -8,24 +8,28 @@
                     <a class="text-decoration-none" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i>
                         {{ __('Dashboard') }}</a> / <a class="text-decoration-none"
                         href="/dashboard/galleries">{{ __('Gallery List') }}</a>
-                    / Add
+                    / Edit
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('galleries.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('galleries.update', $gallery->id) }}" method="post"
+                        enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <img id="previewImage" src="#" alt="Preview"
-                                    style="max-width: 200px; display: none;" class="img-thumbnail mb-2">
+                                @if ($gallery->image)
+                                    <img src="{{ asset('images/' . $gallery->image) }}" alt="Gambar Sebelumnya"
+                                        class="img-thumbnail mb-2" style="max-width: 200px;" id="previewImage">
+                                @else
+                                    <p>Tidak ada gambar sebelumnya.</p>
+                                @endif
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <label for="image" class="form-label">Upload Gambar</label>
-                                <div class="input-group">
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                        id="image" name="image" onchange="previewFile()">
-                                </div>
+                                <label for="image" class="form-label">Upload Gambar Baru</label>
+                                <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                    id="image" name="image" onchange="previewFile()">
                                 @error('image')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -36,11 +40,11 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <textarea placeholder="Penjelasan gambar" class="form-control @error('name') is-invalid @enderror" id="name"
-                                    name="name" rows="4" autofocus></textarea>
+                                <label for="name" class="form-label">Ket</label>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    id="name" name="name" value="{{ old('name', $gallery->name) }}" autofocus>
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -48,7 +52,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <button type="submit" class="float-right btn btn-primary btn-sm">Save</button>
                     </form>
                 </div>
@@ -66,14 +69,12 @@
 
             reader.onloadend = function() {
                 preview.src = reader.result;
-                preview.style.display = 'block'; // Menampilkan pratinjau gambar
             };
 
             if (file) {
                 reader.readAsDataURL(file);
             } else {
                 preview.src = "";
-                preview.style.display = 'none'; // Menyembunyikan pratinjau gambar jika tidak ada file yang dipilih
             }
         }
     </script>

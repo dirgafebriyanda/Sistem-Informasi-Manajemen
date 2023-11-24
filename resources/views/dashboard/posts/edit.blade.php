@@ -1,85 +1,101 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-<div class="row justify-content-center">
-    <div class="col-md-8 mb-4">
-        <div class="card shadow-sm">
-            <div class="card-header">
-                <a class="text-decoration-none" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i>
-                    {{ __('Dashboard') }}</a> / <a class="text-decoration-none" href="/dashboard/posts">{{ __('Post List') }}</a>
-                / Edit
-            </div>
-            <div class="card-body">
-                <form action="/dashboard/posts/{{ $post->slug }}" method="post" enctype="multipart/form-data">
-                    @method('put')
-                    @csrf
-                    <div class="mb-3 row">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title', $post->title) }}" autofocus>
-                            @error('title')
-                            <div class="invalid-feedback">
-                                {{ $message }}
+    <div class="row justify-content-center">
+        <div class="col-md-12 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <a href="/dashboard" class="text-decoration-none">
+                        <i class="fas fa-fw fa-tachometer-alt"></i> {{ __('Dashboard') }}
+                    </a> /
+                    <a href="/dashboard/posts" class="text-decoration-none">
+                        {{ __('Post List') }}
+                    </a>
+                    / Edit
+                </div>
+                <div class="card-body">
+                    <form action="/dashboard/posts/{{ $post->slug }}" method="post" enctype="multipart/form-data">
+                        @method('put')
+                        @csrf
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control @error('title') is-invalid @enderror"
+                                    id="title" name="title" value="{{ old('title', $post->title) }}" autofocus>
+                                @error('title')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                            @enderror
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{ old('slug', $post->slug) }}" readonly>
-                            @error('slug')
-                            <div class="invalid-feedback">
-                                {{ $message }}
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                                <label for="slug" class="form-label">Slug</label>
+                                <input type="text" class="form-control @error('slug') is-invalid @enderror"
+                                    id="slug" name="slug" value="{{ old('slug', $post->slug) }}" readonly>
+                                @error('slug')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                            @enderror
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-12">
-                            <select class="form-control" name="category_id" id="category">
-                                <option value="" disabled>Pilih Category</option>
-                                @foreach ($categories as $category)
-                                @if (old('category_id', $post->category_id) == $category->id)
-                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                                <label for="category" class="form-label">Category</label>
+                                <select class="form-control" name="category_id" id="category">
+                                    <option value="" disabled>Select Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}>
+                                            {{ $category->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" name="oldImage" value="{{ $post->image }}">
+                                @if ($post->image)
+                                    <img src="{{ asset('post-images/' . $post->image) }}"
+                                        class="img-preview img-thumbnail mb-3" alt="Post Image" style="max-width: 200px;">
                                 @else
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <img src="{{ asset('img/default.png') }}" class="img-preview img-thumbnail mb-3"
+                                        style="max-width: 200px;" alt="No Image">
                                 @endif
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-6">
-                            <input type="hidden" name="oldImage" value="{{ $post->image }}">
-                            @if ($post->image)
-                            <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid mb-3 col-sm-2">
-                            @else
-                            <img class="img-preview img-fluid mb-3 col-sm-2">
-                            @endif
-                        </div>
-                        <div class="col-md-6">
-
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="image" onchange="previewImage()">
-                            @error('image')
-                            <div class="invalid-feedback">
-                                {{ $message }}
                             </div>
-                            @enderror
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-12">
-                            <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
-                            <trix-editor input="body"></trix-editor>
-                            @error('body')
-                            <p class="text-danger">{{ $message }}</p>
-                            @enderror
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                                <label for="image" class="form-label">Image</label>
+                                <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                    name="image" id="image" onchange="previewImage()">
+                                @error('image')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary float-right btn-sm">Edit</button>
-                </form>
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                                <label for="body" class="form-label">Body</label>
+                                <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
+                                <trix-editor input="body"></trix-editor>
+                                @error('body')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary float-right btn-sm">Edit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
     <script>
         const title = document.querySelector('#title');
         const slug = document.querySelector('#slug');
@@ -91,7 +107,7 @@
         });
 
         document.addEventListener('trix-file-accept', function(event) {
-            event.preventDefault()
+            event.preventDefault();
         });
 
         function previewImage() {
@@ -108,4 +124,4 @@
             }
         }
     </script>
-    @endsection
+@endsection

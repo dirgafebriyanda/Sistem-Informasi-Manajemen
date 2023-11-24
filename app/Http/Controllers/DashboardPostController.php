@@ -6,8 +6,8 @@ use App\Models\Post;
 use App\Models\Category;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class DashboardPostController extends Controller
 {
@@ -20,7 +20,7 @@ class DashboardPostController extends Controller
     {
         return view('dashboard.posts.index', [
             'title' => 'My Posts',
-            'posts' => Post::where('user_id', auth()->user()->id)->get()
+            'posts' => Post::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
@@ -33,7 +33,7 @@ class DashboardPostController extends Controller
     {
         return view('dashboard.posts.create', [
             'title' => 'Create new post',
-            'categories' => Category::all()
+            'categories' => Category::all(),
         ]);
     }
 
@@ -43,9 +43,9 @@ class DashboardPostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        // return $request;
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
@@ -55,14 +55,17 @@ class DashboardPostController extends Controller
         ]);
 
         if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('post-images'), $imageName);
+            $validatedData['image'] = $imageName;
         }
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validatedData);
-        return redirect('/dashboard/posts')->with('success', 'New post has bean added!');
+        return redirect('/dashboard/posts')->with('success', 'New post has been added!');
     }
 
     /**
@@ -75,7 +78,7 @@ class DashboardPostController extends Controller
     {
         return view('dashboard.posts.show', [
             'post' => $post,
-            'title' => 'Post'
+            'title' => 'Post',
         ]);
     }
 
@@ -90,7 +93,7 @@ class DashboardPostController extends Controller
         return view('dashboard.posts.edit', [
             'title' => 'Edit post',
             'post' => $post,
-            'categories' => Category::all()
+            'categories' => Category::all(),
         ]);
     }
 
@@ -101,6 +104,7 @@ class DashboardPostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, Post $post)
     {
         $rules = [
@@ -113,21 +117,31 @@ class DashboardPostController extends Controller
         if ($request->slug != $post->slug) {
             $rules['slug'] = 'required|unique:posts';
         }
+
         $validatedData = $request->validate($rules);
+
         if ($request->file('image')) {
-            if ($request->file('image')) {
-                if ($request->oldImage) {
-                    Storage::delete($request->oldImage);
+            // Hapus gambar lama jika ada
+            if ($post->image) {
+                $oldImagePath = public_path('post-images/' . $post->image);
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);
                 }
             }
-            $validatedData['image'] = $request->file('image')->store('post-images');
+
+            // Pindahkan dan simpan gambar baru
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('post-images'), $imageName);
+            $validatedData['image'] = $imageName;
         }
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
-        Post::where('id', $post->id)->update($validatedData);
-        return redirect('/dashboard/posts')->with('success', 'New post has bean updated!');
+        $post->update($validatedData);
+
+        return redirect('/dashboard/posts')->with('success', 'Post has been updated!');
     }
 
     /**
@@ -136,14 +150,19 @@ class DashboardPostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(Post $post)
     {
-
         if ($post->image) {
-            Storage::delete($post->image);
+            // Hapus gambar jika ada
+            $imagePath = public_path('post-images/' . $post->image);
+            if (File::exists($imagePath)) {
+                File::delete($imagePath);
+            }
         }
+
         Post::destroy($post->id);
-        return redirect('/dashboard/posts')->with('success', 'Post has bean deleted!');
+        return redirect('/dashboard/posts')->with('success', 'Post has been deleted!');
     }
 
     public function checkSlug(Request $request)

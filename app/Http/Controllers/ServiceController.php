@@ -10,8 +10,8 @@ class ServiceController extends Controller
     public function index()
     {
         return view('dashboard.services.index', [
-            'title' => 'Services',
-            'active' => 'services',
+            'title' => 'Bengkel Sport Kreatif - Layanan',
+            'active' => 'layanan',
             'services' => Service::all() // Ubah dari 'service' menjadi 'Service'
         ]);
     }

@@ -47,12 +47,12 @@
     <!-- akhir slide -->
 
     <!-- alasan -->
-    <div class="container-fluid my-5 text-center">
-        <h2 class="fw-bold text-center">Alasan Mengapa Anda Harus Memilih Kami</h2>
+    <div class="container-fluid my-4 text-center">
+        <h2 class="fw-bold text-center" data-aos="slide-down">Alasan Mengapa Anda Harus Memilih Kami?</h2>
 
-        <div class="row mt-5">
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow">
+        <div class="row mt-4" style="overflow: hidden">
+            <div class="col-lg-4 mb-4" data-aos="flip-left">
+                <div class="card shadow bg-dark text-light">
                     <div class="card-body">
                         <i class="fas fa-headset fa-3x mb-3"></i>
                         <h5 class="card-title">Pelayanan Pelanggan 24/7</h5>
@@ -64,8 +64,8 @@
 
             <!-- Menambahkan ikon Font Awesome ke alasan lainnya -->
             <!-- Anda dapat mengganti ikon dengan ikon Font Awesome lainnya sesuai kebutuhan -->
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow">
+            <div class="col-lg-4 mb-4" data-aos="flip-left">
+                <div class="card shadow bg-dark text-light">
                     <div class="card-body">
                         <i class="fas fa-award fa-3x mb-3"></i>
                         <h5 class="card-title">Kualitas Unggul</h5>
@@ -74,8 +74,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow">
+            <div class="col-lg-4 mb-4" data-aos="flip-left">
+                <div class="card shadow bg-dark text-light">
                     <div class="card-body">
                         <i class="fas fa-lightbulb fa-3x mb-3"></i>
                         <h5 class="card-title">Inovasi Terbaru</h5>
@@ -84,8 +84,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow">
+            <div class="col-lg-4 mb-4" data-aos="flip-left">
+                <div class="card shadow bg-dark text-light">
                     <div class="card-body">
                         <i class="fas fa-users fa-3x mb-3"></i>
                         <h5 class="card-title">Tim Profesional</h5>
@@ -94,8 +94,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow">
+            <div class="col-lg-4 mb-4" data-aos="flip-left">
+                <div class="card shadow bg-dark text-light">
                     <div class="card-body">
                         <i class="fas fa-hand-holding-heart fa-3x mb-3"></i>
                         <h5 class="card-title">Kemudahan Penggunaan</h5>
@@ -105,12 +105,12 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow">
+            <div class="col-lg-4 mb-4" data-aos="flip-left">
+                <div class="card shadow bg-dark text-light">
                     <div class="card-body">
                         <i class="fas fa-shield-alt fa-3x mb-3"></i>
                         <h5 class="card-title">Keandalan</h5>
-                        <p class="card-text">Anda bisa mempercayai kami dalam memberikan layanan yang handal dan terpercaya.
+                        <p class="card-text">Anda bisa mempercayai kami dalam memberikan layanan yang handal.
                         </p>
                     </div>
                 </div>
@@ -123,128 +123,129 @@
     <section id="layanan">
         <div class="container-fluid">
             <div class="row  justify-content-center">
-                <div class="col">
-                    <h2 class="fw-bold text-center">Layanan Kami</h2>
+                <div class="col" data-aos="slide-down">
+                    <h2 class="fw-bold text-center">Layanan apa saja yang kami berikan?</h2>
                 </div>
             </div>
-            <div class="row justify-content-center fs-5" style="overflow: hidden">
-                <div class="row mt-3">
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow">
-                            <div class="card-body text-center">
-                                <i class="fas fa-leaf fa-2x mb-3"></i> <!-- Ikon daun dari Font Awesome -->
-                                <h5 class="card-title fw-bold">Menambah Berat Daun</h5>
-                                <p class="card-text">Layanan menambah berat daun raket bulu tangkis untuk meningkatkan
-                                    performa
-                                    pukulan.</p>
-                                <p class="card-text fw-bold">Rp. 20.000 - Rp.
-                                    50.000</p>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow">
-                            <div class="card-body text-center">
-                                <i class="fas fa-stroopwafel fa-2x mb-3"></i> <!-- Ikon reset dari Font Awesome -->
-                                <h5 class="card-title fw-bold">Ganti atau Stel Ulang Senar</h5>
-                                <p class="card-text">Layanan penggantian atau penyetelan ulang senar bulu tangkis & tenis
-                                    sesuai kebutuhan.</p>
-                                <p class="card-text fw-bold">Rp. 35.000 - Rp.
-                                    45.000</p>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow">
-                            <div class="card-body text-center">
-                                <i class="fas fa-low-vision fa-2x mb-3"></i> <!-- Ikon mata ayam dari Font Awesome -->
-                                <h5 class="card-title fw-bold">Ganti Mata Ayam</h5>
-                                <p class="card-text">Layanan penggantian mata ayam pada senar raket bulu tangkis & tenis.
-                                </p>
-                                <p class="card-text fw-bold">Rp. 15.000 - Rp.
-                                    35.000</p>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow">
-                            <div class="card-body text-center">
-                                <i class="fas fa-tools fa-2x mb-3"></i> <!-- Ikon alat dari Font Awesome -->
-                                <h5 class="card-title fw-bold">Servis Patah Tanpa Klem</h5>
-                                <p class="card-text">Layanan perbaikan raket bulu tangkis yang patah tanpa klem.</p>
-                                <p class="card-text fw-bold">Rp. 75.000 = Rp.
-                                    100.000</p>
-                                <div>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow">
-                            <div class="card-body text-center">
-                                <i class="fas fa-grip-lines-vertical fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
-                                <h5 class="card-title fw-bold">Ganti atau Stel Grip</h5>
-                                <p class="card-text">Layanan penggantian atau penyetelan ulang grip raket bulu tangkis.</p>
-                                <p class="card-text fw-bold">Rp. 35.000</p>
-                                <div class="card-text">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow">
-                            <div class="card-body text-center">
-                                <i class="fas fa-ring fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
-                                <h5 class="card-title fw-bold">Ganti Tutup Grip</h5>
-                                <p class="card-text">Layanan penggantian tutup grip raket bulu tangkis & tenis.</p>
-                                <p class="card-text fw-bold">Rp. 25.000 - Rp.
-                                    35.000</p>
-                                <div class="card-text">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
+            <div class="row mt-3 justify-content-center fs-5" style="overflow: hidden">
+                <div class="col-md-4 mb-4" data-aos="flip-right">
+                    <div class="card shadow bg-dark text-light">
+                        <div class="card-body text-center">
+                            <i class="fas fa-leaf fa-2x mb-3"></i> <!-- Ikon daun dari Font Awesome -->
+                            <h5 class="card-title fw-bold">Menambah Berat Daun</h5>
+                            <p class="card-text">Layanan menambah berat daun raket bulutangkis & tenis untuk
+                                meningkatkan
+                                performa pukulan.</p>
+                            <p class="card-text fw-bold">Rp. 20.000 - Rp.
+                                50.000</p>
+                            <div>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-4 mb-4" data-aos="flip-right">
+                    <div class="card shadow bg-dark text-light">
+                        <div class="card-body text-center">
+                            <i class="fas fa-stroopwafel fa-2x mb-3"></i> <!-- Ikon reset dari Font Awesome -->
+                            <h5 class="card-title fw-bold">Ganti atau Stel Ulang Senar</h5>
+                            <p class="card-text">Layanan penggantian atau penyetelan ulang senar bulutangkis & tenis
+                                sesuai kebutuhan.</p>
+                            <p class="card-text fw-bold">Rp. 35.000 - Rp.
+                                45.000</p>
+                            <div>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4" data-aos="flip-right">
+                    <div class="card shadow bg-dark text-light">
+                        <div class="card-body text-center">
+                            <i class="fas fa-low-vision fa-2x mb-3"></i> <!-- Ikon mata ayam dari Font Awesome -->
+                            <h5 class="card-title fw-bold">Ganti Mata Ayam</h5>
+                            <p class="card-text">Layanan penggantian mata ayam pada senar raket bulutangkis & tenis.
+                            </p>
+                            <p class="card-text fw-bold">Rp. 15.000 - Rp.
+                                35.000</p>
+                            <div>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-right">
+                    <div class="card shadow bg-dark text-light">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-2x mb-3"></i> <!-- Ikon alat dari Font Awesome -->
+                            <h5 class="card-title fw-bold">Service Patah Tanpa Klem</h5>
+                            <p class="card-text">Layanan perbaikan raket bulutangkis & tenis yang patah tanpa klem.
+                            </p>
+                            <p class="card-text fw-bold">Rp. 75.000 - Rp.
+                                100.000</p>
+                            <div>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4" data-aos="flip-right">
+                    <div class="card shadow bg-dark text-light">
+                        <div class="card-body text-center">
+                            <i class="fas fa-grip-lines-vertical fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
+                            <h5 class="card-title fw-bold">Ganti atau Stel Grip</h5>
+                            <p class="card-text">Layanan penggantian atau penyetelan ulang grip raket bulutangkis &
+                                tenis.</p>
+                            <p class="card-text fw-bold">Rp. 35.000</p>
+                            <div class="card-text">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-right">
+                    <div class="card shadow bg-dark text-light">
+                        <div class="card-body text-center">
+                            <i class="fas fa-ring fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
+                            <h5 class="card-title fw-bold">Ganti Tutup Grip</h5>
+                            <p class="card-text">Layanan penggantian tutup grip raket bulutangkis & tenis.</p>
+                            <p class="card-text fw-bold">Rp. 25.000 - Rp.
+                                35.000</p>
+                            <div class="card-text">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
     <!-- akhir layanan -->
 
@@ -252,8 +253,9 @@
     <section id="gallery" class="mb-4">
         <div class="container-fluid">
             <div class="row mt-4 text-center">
-                <div class="col">
-                    <h2 class="fw-bold">Galeri</h2>
+                <div class="col" data-aos="slide-down">
+                    <h2 class="fw-bold">Raket sperti apa saja yang bisa di perbaiki?</h2>
+                    <h3 class="fw-bold text-center">Semua jenis raket bulutangkis dan tenis.</h3>
                 </div>
             </div>
             <div class="row mt-4 fs-5 justify-content-center" style="overflow: hidden">
@@ -284,15 +286,15 @@
 
     <!-- Testimoni -->
     <section id="testimoni" class="mb-4">
-        <div class="container-fluid p-3">
-            <div class="row mt-5 text-center">
-                <div class="col">
+        <div class="container-fluid">
+            <div class="row mt-3 text-center">
+                <div class="col" data-aos="slide-down">
                     <h2 class="fw-bold">Apa kata mereka yang sudah menggunakan jasa kami?</h2>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-lg-4 mb-4">
-                    <div class="card shadow">
+            <div class="row mt-4" style="overflow: hidden">
+                <div class="col-lg-4 mb-4" data-aos="slide-up">
+                    <div class="card shadow bg-dark text-light">
                         <div class="card-body">
                             <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> Busyra Sidi</p>
                             <p class="card-text">Pelayanan cepat dan sangat memuaskan! Saya sangat puas dengan
@@ -307,8 +309,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card shadow">
+                <div class="col-lg-4 mb-4" data-aos="slide-up">
+                    <div class="card shadow bg-dark text-light">
                         <div class="card-body">
                             <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> M. Iswan Achir</p>
                             <p class="card-text">Proses perbaikan cepat dan tanpa masalah. Saya puas sekali, Terima kasih!
@@ -323,8 +325,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card shadow">
+                <div class="col-lg-4 mb-4" data-aos="slide-up">
+                    <div class="card shadow bg-dark text-light">
                         <div class="card-body">
                             <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> Musa Harahap</p>
                             <p class="card-text">Hasil perbaikan yang luar biasa. Saya sangat puas sekali, Terima kasih!

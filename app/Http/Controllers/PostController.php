@@ -27,7 +27,7 @@ class PostController extends Controller
             ->withQueryString();
 
         return view('posts', [
-            'title' => 'Blog & Berita' . $title,
+            'title' => 'Bengkel Sport Kreatif - Blog & Berita' . $title,
             'active' => 'blog',
             'posts' => $posts,
         ]);

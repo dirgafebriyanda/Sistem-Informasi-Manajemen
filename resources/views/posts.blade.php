@@ -23,11 +23,11 @@
     @if ($posts->count())
         <div class="card mb-3 text-center">
             @if ($posts[0]->image)
-                <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}"
+                <img src="{{ asset('post-images/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}"
                     class="img-fluid">
             @else
-                <img src="{{ asset('img/gambar/banner-desktop.png') }}" alt="{{ $posts[0]->category->name }}"
-                    class="img-fluid mt-3">
+                <img src="{{ asset('img/default.png') }}" alt="{{ $posts[0]->category->name }}"
+                    class="img-fluid mt-3 bg-dark">
             @endif
             <div class="card-body text-center">
                 <h3 class="card-title"><a class=" text-decoration-none text-dark"
@@ -57,10 +57,10 @@
                                     class="text-white text-decoration-none">
                                     {{ $post->category->name }}</a></div>
                             @if ($post->image)
-                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}"
+                                <img src="{{ asset('post-images/' . $post->image) }}" alt="{{ $post->category->name }}"
                                     class="card-img-top">
                             @else
-                                <img src="{{ asset('img/gambar/banner-desktop.png') }}" class="card-img-top"
+                                <img src="{{ asset('img/default.png') }}" class="card-img-top bg-dark"
                                     alt="{{ $post->category->name }}">
                             @endif
 

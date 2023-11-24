@@ -24,7 +24,7 @@
                             <thead>
                                 <tr class="bg-dark text-light fw-bold">
                                     <th scope="col">No</th>
-                                    <th scope="col">Name</th>
+                                    <th scope="col">Ket</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Action</th>
                                 </tr>
