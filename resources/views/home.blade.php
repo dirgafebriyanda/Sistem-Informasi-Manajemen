@@ -284,68 +284,101 @@
     </section>
     <!-- Akhir Galeri -->
 
-    <!-- Testimoni -->
-    <section id="testimoni" class="mb-4">
+    <!-- Ulasan -->
+    <section id="ulasan" class="mb-4">
         <div class="container-fluid">
             <div class="row mt-3 text-center">
                 <div class="col" data-aos="slide-down">
                     <h2 class="fw-bold">Apa kata mereka yang sudah menggunakan jasa kami?</h2>
                 </div>
             </div>
-            <div class="row mt-4" style="overflow: hidden">
-                <div class="col-lg-4 mb-4" data-aos="slide-up">
-                    <div class="card shadow bg-dark text-light">
-                        <div class="card-body">
-                            <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> Busyra Sidi</p>
-                            <p class="card-text">Pelayanan cepat dan sangat memuaskan! Saya sangat puas dengan
-                                hasilnya.</p>
-                            <span class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </span>
+            <div class="row mt-4 justify-content-center" style="overflow: hidden" id="reviewContainer">
+                @foreach ($reviews->take(6) as $review)
+                    <div class="col-lg-4 mb-4" data-aos="slide-up">
+                        <div class="card shadow bg-dark text-light">
+                            <div class="card-body">
+                                <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> {{ $review->name }}</p>
+                                <p class="card-text">{{ $review->comment }}</p>
+                                <p>Rating: {{ $review->rating }}</p>
+                                <span>
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if ($i <= $review->rating)
+                                            <i class="fas fa-star text-warning"></i>
+                                        @else
+                                            <i class="fas fa-star"></i>
+                                        @endif
+                                    @endfor
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4" data-aos="slide-up">
-                    <div class="card shadow bg-dark text-light">
-                        <div class="card-body">
-                            <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> M. Iswan Achir</p>
-                            <p class="card-text">Proses perbaikan cepat dan tanpa masalah. Saya puas sekali, Terima kasih!
-                            </p>
-                            <span class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </span>
-                        </div>
+                @endforeach
+            </div>
+            <div class="col-md-12" data-aos="slide-up">
+                <div class="btn-group text-center d-flex justify-content-center">
+                    <div class="px-2">
+                        <button type="button" class="btn btn-warning text-light" data-bs-toggle="modal"
+                            data-bs-target="#ulasanModal">
+                            Berikan Ulasan
+                        </button>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4" data-aos="slide-up">
-                    <div class="card shadow bg-dark text-light">
-                        <div class="card-body">
-                            <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> Musa Harahap</p>
-                            <p class="card-text">Hasil perbaikan yang luar biasa. Saya sangat puas sekali, Terima kasih!
-                            </p>
-                            <span class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </span>
-                        </div>
+                    <div id="loadMoreContainer">
+                        @if ($reviews->count() > 6)
+                            <button id="loadMoreBtn" class="btn btn-dark">Tampilkan Semua Ulasan</button>
+                        @endif
                     </div>
                 </div>
             </div>
-        </div>
+
         </div>
     </section>
-    <!-- Akhir Testimoni -->
+    <!-- Akhir Ulasan -->
+
+    <!-- Modal untuk Ulasan -->
+    <div class="modal fade" id="ulasanModal" tabindex="-1" aria-labelledby="ulasanModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ulasanModalLabel">Berikan Ulasan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulir Ulasan -->
+                    <form method="post" action="{{ route('ulasan.store') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" name="name" class="form-control" id="nama" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="kontak" class="form-label">Email atau No HP</label>
+                            <input type="text" name="contact" class="form-control" id="kontak" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rating</label>
+                            <div class="rating">
+                                <i class="fas fa-star" data-rating="1"></i>
+                                <i class="fas fa-star" data-rating="2"></i>
+                                <i class="fas fa-star" data-rating="3"></i>
+                                <i class="fas fa-star" data-rating="4"></i>
+                                <i class="fas fa-star" data-rating="5"></i>
+                                <input type="hidden" name="rating" id="selected-rating" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ulasan" class="form-label">Ulasan</label>
+                            <textarea name="comment" class="form-control" id="ulasan" rows="4" required></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Akhir Modal Ulasan -->
 
     <!-- Modal Pemesanan-->
     <div class="modal fade" id="formPemesanan" tabindex="-1" aria-labelledby="formPemesananLabel" aria-hidden="true">
@@ -393,5 +426,72 @@
             // Bersihkan formulir setelah dikirim
             document.getElementById('orderForm').reset();
         }
+    </script>
+
+    <!-- Add this script to your HTML, preferably before the closing </body> tag -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ratingStars = document.querySelectorAll(".rating i");
+            const ratingInput = document.getElementById("selected-rating");
+
+            ratingStars.forEach((star, index) => {
+                star.addEventListener("click", () => {
+                    resetStars();
+
+                    for (let i = 0; i <= index; i++) {
+                        ratingStars[i].classList.add("active");
+                    }
+
+                    ratingInput.value = index + 1;
+                });
+            });
+
+            function resetStars() {
+                ratingStars.forEach((star) => {
+                    star.classList.remove("active");
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviews = @json($reviews->slice(6)->values());
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const reviewContainer = document.getElementById('reviewContainer');
+            const loadMoreContainer = document.getElementById('loadMoreContainer');
+
+            if (reviews.length === 0) {
+                loadMoreContainer.style.display = 'none';
+            }
+
+            loadMoreBtn.addEventListener('click', function() {
+                reviews.forEach(function(review) {
+                    const ratingHtml = Array.from({
+                        length: 5
+                    }, (_, index) => {
+                        return index < review.rating ?
+                            '<i class="fas fa-star text-warning"></i>' :
+                            '<i class="fas fa-star"></i>';
+                    }).join('');
+
+                    const reviewHtml = `
+            <div class="col-lg-4 mb-4" data-aos="slide-up">
+                <div class="card shadow bg-dark text-light">
+                    <div class="card-body">
+                        <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> ${review.name}</p>
+                        <p class="card-text">${review.comment}</p>
+                        <p>Rating: ${review.rating}</p>
+                        <span>${ratingHtml}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+
+                    reviewContainer.innerHTML += reviewHtml;
+                });
+
+                loadMoreContainer.style.display = 'none';
+            });
+        });
     </script>
 @endsection

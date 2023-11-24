@@ -1,31 +1,31 @@
   *{
   font-family: "Poppins", sans-serif;
 
-}
-body {
+  }
+  body {
   font-family: "Poppins", sans-serif;
-}
-html {
+  }
+  html {
   scroll-behavior: smooth;
-}
+  }
   .form-signin .form-floating:focus-within {
-    z-index: 2;
+  z-index: 2;
   }
-  
+
   .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   }
-  
+
   .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   }
   .form-regitration input{
-    border-radius: 0;
-    margin-bottom: -1px;
+  border-radius: 0;
+  margin-bottom: -1px;
   }
   .garis::after{
   content: '';
@@ -36,91 +36,103 @@ html {
   transform: scale(0);
   transform-origin: left;
   transition: transform 0.1s ease;
-}
-.garis:hover::after{
+  }
+  .garis:hover::after{
   transform: scale(1);
-}
-.navbar-light .navbar-nav .nav-link.active {
+  }
+  .navbar-light .navbar-nav .nav-link.active {
   color: #e2e2e2;
   text-decoration-line: 1rem;
   transform: scaleX(1);
-}
-.nav-link{
+  }
+  .nav-link{
   color: #e2e2e2;
-}
-.carousel-item {
+  }
+  .carousel-item {
   height: 38rem;
-}
-.carousel-item > img {
+  }
+  .carousel-item > img {
   position: absolute;
   top: 0;
   left: 0;
   min-width: 100%;
   height: 38rem;
-}
-.carousel-caption-left {
-      position: absolute;
-      left: 5%;
-      top: 35%;
-      transform: translateY(-50%);
-      color: #fff;
-      text-align: left;
-    }
-    .caption {
-      font-size: 5em;
-    }
-    .persuasif {
-      font-size: 3.2em;
-    }
-      .btn-custome:hover {
-      transform: scale(1.1); /* Membesarkan tombol saat dihover */
-    }
+  }
+  .carousel-caption-left {
+  position: absolute;
+  left: 5%;
+  top: 35%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-align: left;
+  }
+  .caption {
+  font-size: 5em;
+  }
+  .persuasif {
+  font-size: 3.2em;
+  }
+  .btn-custome:hover {
+  transform: scale(1.1); /* Membesarkan tombol saat dihover */
+  }
 
-#btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    z-index: 1;
-}
+  #btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1;
+  }
 
-#whatsapp {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1;
-}
+  #whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  }
 
-.text-green:hover {
-    transform: scale(1.1);
-     color: #00ff2a;
-    background-color: #00ff2a;
-    border-color: #00ff2a;
-}
+  .text-green:hover {
+  transform: scale(1.1);
+  color: #00ff2a;
+  background-color: #00ff2a;
+  border-color: #00ff2a;
+  }
 
-.text-green {
-    color: #00ff2a;
-    background-color: #00ff2a;
-    border-color: #00ff2a;
-}
-#close{
+  .text-green {
+  color: #00ff2a;
+  background-color: #00ff2a;
+  border-color: #00ff2a;
+  }
+  #close{
   display: none;
   width: 1.5em;
   height: 1.5rem;
   margin-top: 0.4rem;
-}
+  }
 
-.flip-horizontal {
-            transform: scaleX(-1);
-            display: inline-block;
-        }
-      /* Media query untuk versi mobile */
-    @media (max-width: 768px) {
-      .caption {
-        font-size: 2.2em; /* Ukuran huruf yang lebih kecil untuk versi mobile */
-      }
-      .persuasif {
-        font-size: 1.2em; /* Ukuran huruf yang lebih kecil untuk versi mobile */
-      }
-    }
-  
+  .flip-horizontal {
+  transform: scaleX(-1);
+  display: inline-block;
+  }
+
+  /* Add this CSS to your styles */
+  .rating i {
+  font-size: 24px;
+  color: #8e8d8d;
+  cursor: pointer;
+  }
+
+  .rating i:hover,
+  .rating i.active {
+  color: #ffc107;
+  }
+
+  /* Media query untuk versi mobile */
+  @media (max-width: 768px) {
+  .caption {
+  font-size: 2.2em; /* Ukuran huruf yang lebih kecil untuk versi mobile */
+  }
+  .persuasif {
+  font-size: 1.2em; /* Ukuran huruf yang lebih kecil untuk versi mobile */
+  }
+  }

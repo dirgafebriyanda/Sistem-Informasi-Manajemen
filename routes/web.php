@@ -6,12 +6,14 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardGalleryController;
+use App\Http\Controllers\DashboardReviewController;
 use App\Http\Controllers\GaleriController;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
+use App\Models\Review;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +26,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-
 Route::get('/page-not-found', function () {
-    return view('errors.404',);
+    return view('errors.404');
 });
 
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
@@ -35,35 +36,40 @@ Route::get('/gallery/{id}/download', [GaleriController::class, 'download'])->nam
 
 Route::get('/layanan', function () {
     return view('service', [
-        "active" => "layanan",
-        "title" => "Bengkel Sport Kreatif - Layanan"
+        'active' => 'layanan',
+        'title' => 'Bengkel Sport Kreatif - Layanan',
     ]);
 });
 
 Route::get('/', function () {
+    // Ambil data ulasan dari database
+    $reviews = Review::orderByDesc('rating')->get();
+
     return view('home', [
-        "active" => "beanda",
-        "title" => "Bengkel Sport Kreatif"
+        'active' => 'beranda',
+        'title' => 'Bengkel Sport Kreatif',
+        'reviews' => $reviews, // Mengirimkan data ulasan ke tampilan
     ]);
 });
+
 Route::get('/testimoni', function () {
     return view('testimoni', [
-        "active" => "testimoni",
-        "title" => "Bengkel Sport Kreatif - Testimoni"
+        'active' => 'testimoni',
+        'title' => 'Bengkel Sport Kreatif - Testimoni',
     ]);
 });
 
 Route::get('/kritik-dan-saran', function () {
     return view('kritikdansaran', [
-        "active" => "kritik",
-        "title" => " Bengkel Sport Kreatif - Kritik dan Saran"
+        'active' => 'kritik',
+        'title' => ' Bengkel Sport Kreatif - Kritik dan Saran',
     ]);
 });
 
 Route::get('/tentang', function () {
     return view('about', [
-        "active" => "tentang",
-        "title" => "Bengkel Sport Kreatif - Tentang"
+        'active' => 'tentang',
+        'title' => 'Bengkel Sport Kreatif - Tentang',
     ]);
 });
 
@@ -73,27 +79,29 @@ Route::get('/blog-dan-berita/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories', function () {
     return view('categories', [
         'title' => 'Post categoies',
-        "active" => "categories",
-        'categories' => Category::all()
+        'active' => 'categories',
+        'categories' => Category::all(),
     ]);
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('posts', [
         'title' => "Post by category : $category->name",
-        "active" => "categories",
-        'posts' => $category->posts->load(['author', 'category'])
+        'active' => 'categories',
+        'posts' => $category->posts->load(['author', 'category']),
     ]);
 });
 Route::get('/authors/{author:username}', function (User $author) {
     return view('posts', [
         'title' => "Ditulis Oleh : $author->name",
-        "active" => "blog",
-        'posts' => $author->posts->load(['author', 'category'])
+        'active' => 'blog',
+        'posts' => $author->posts->load(['author', 'category']),
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])
+    ->name('login')
+    ->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -101,11 +109,15 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::get('/dashboard/categories/checkSlug', [DashboardCategoryController::class, 'checkSlug'])->middleware('admin');
-Route::resource('/dashboard/categories', DashboardCategoryController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/categories', DashboardCategoryController::class)
+    ->except('show')
+    ->middleware('admin');
 
 Route::resource('/dashboard/services', ServiceController::class)->middleware('auth');
 Route::resource('/dashboard/galleries', DashboardGalleryController::class)->middleware('auth');
 
 Route::resource('/dashboard/users', UserController::class)->middleware('admin');
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');;
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
+
+Route::post('/ulasan', [DashboardReviewController::class, 'store'])->name('ulasan.store');
