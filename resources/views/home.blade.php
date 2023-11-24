@@ -292,32 +292,51 @@
                     <h2 class="fw-bold">Apa kata mereka yang sudah menggunakan jasa kami?</h2>
                 </div>
             </div>
-            <div class="row mt-4 justify-content-center" style="overflow: hidden" id="reviewContainer">
-                @foreach ($reviews->take(6) as $review)
-                    <div class="col-lg-4 mb-4" data-aos="slide-up">
-                        <div class="card shadow bg-dark text-light">
-                            <div class="card-body">
-                                <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> {{ $review->name }}</p>
-                                <p class="card-text">{{ $review->comment }}</p>
-                                <p>Rating: {{ $review->rating }}</p>
-                                <span>
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        @if ($i <= $review->rating)
-                                            <i class="fas fa-star text-warning"></i>
-                                        @else
-                                            <i class="fas fa-star"></i>
-                                        @endif
-                                    @endfor
-                                </span>
+            @if ($reviews->isEmpty())
+                <div class="container py-3">
+                    <div class="row justify-content-center" style="overflow: hidden">
+                        <div class="col-lg-6" data-aos="slide-up">
+                            <div class="card shadow bg-dark text-light text-center">
+                                <div class="card-body">
+                                    <p class="display-4">Belum ada ulasan.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @else
+                <div class="row mt-4 justify-content-center" style="overflow: hidden" id="reviewContainer">
+                    @foreach ($reviews->take(6) as $review)
+                        <div class="col-lg-4 mb-4" data-aos="slide-up">
+                            <div class="card shadow bg-dark text-light">
+                                <div class="card-body">
+                                    <p>
+                                        <span class="fw-bold"><i class="fas fa-user-circle fa-lg"></i>
+                                            {{ $review->name }}</span>
+                                        <br>
+                                        <span class="small px-4">{{ $review->job }}</span>
+                                    </p>
+                                    <p class="card-text">{{ $review->comment }}</p>
+                                    <span>
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if ($i <= $review->rating)
+                                                <i class="fas fa-star text-warning"></i>
+                                            @else
+                                                <i class="fas fa-star text-secondary"></i>
+                                            @endif
+                                        @endfor
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
             <div class="col-md-12" data-aos="slide-up">
                 <div class="btn-group text-center d-flex justify-content-center">
                     <div class="px-2">
-                        <button type="button" class="btn btn-warning text-light" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#ulasanModal">
                             Berikan Ulasan
                         </button>
@@ -351,7 +370,11 @@
                             <input type="text" name="name" class="form-control" id="nama" required>
                         </div>
                         <div class="mb-3">
-                            <label for="kontak" class="form-label">Email atau No HP</label>
+                            <label for="pekerjaan" class="form-label">Pekerjaan</label>
+                            <input type="text" name="job" class="form-control" id="pekerjaan" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="kontak" class="form-label">Kontak</label>
                             <input type="text" name="contact" class="form-control" id="kontak" required>
                         </div>
                         <div class="mb-3">
@@ -428,7 +451,6 @@
         }
     </script>
 
-    <!-- Add this script to your HTML, preferably before the closing </body> tag -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const ratingStars = document.querySelectorAll(".rating i");
@@ -453,6 +475,7 @@
             }
         });
     </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const reviews = @json($reviews->slice(6)->values());
@@ -471,21 +494,24 @@
                     }, (_, index) => {
                         return index < review.rating ?
                             '<i class="fas fa-star text-warning"></i>' :
-                            '<i class="fas fa-star"></i>';
+                            '<i class="fas fa-star text-secondary"></i>';
                     }).join('');
 
                     const reviewHtml = `
-            <div class="col-lg-4 mb-4" data-aos="slide-up">
-                <div class="card shadow bg-dark text-light">
-                    <div class="card-body">
-                        <p class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> ${review.name}</p>
-                        <p class="card-text">${review.comment}</p>
-                        <p>Rating: ${review.rating}</p>
-                        <span>${ratingHtml}</span>
+                    <div class="col-lg-4 mb-4" data-aos="slide-up">
+                        <div class="card shadow bg-dark text-light">
+                            <div class="card-body">
+                                <p>
+                                    <span class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> ${review.name}</span>
+                                    <br>
+                                    <span class="small px-4">${review.job}</span>
+                                </p>
+                                <p class="card-text">${review.comment}</p>
+                                <span>${ratingHtml}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        `;
+                `;
 
                     reviewContainer.innerHTML += reviewHtml;
                 });

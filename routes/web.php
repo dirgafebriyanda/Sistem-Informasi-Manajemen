@@ -121,3 +121,6 @@ Route::resource('/dashboard/users', UserController::class)->middleware('admin');
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
 
 Route::post('/ulasan', [DashboardReviewController::class, 'store'])->name('ulasan.store');
+
+
+Route::resource('dashboard/ulasan', DashboardReviewController::class)->middleware('auth');;

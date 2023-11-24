@@ -47,6 +47,18 @@
                             </a>
                         </div>
                         <div class="col-sm-4 mb-4">
+                            <a href="/dashboard/ulasan" class="text-decoration-none">
+                                <div class="card bg-success">
+                                    <div class="card-body">
+                                        <i class="fas fa-comment fa-3x mb-3 text-white"></i>
+                                        <h5 class="card-title text-white">Ulasan <span
+                                                class="badge badge-light">{{ $reviewsCount }}</span>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 mb-4">
                             <div class="card bg-success">
                                 <div class="card-body">
                                     <i class="fas fa-comments fa-3x mb-3 text-white"></i>

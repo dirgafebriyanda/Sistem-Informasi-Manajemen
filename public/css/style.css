@@ -2,9 +2,19 @@
   font-family: "Poppins", sans-serif;
 
   }
-  body {
-  font-family: "Poppins", sans-serif;
-  }
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url('/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0; /* Fallback color */
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8); /* Teks dengan opasitas */
+}
+
+
   html {
   scroll-behavior: smooth;
   }
@@ -127,6 +137,15 @@
   color: #ffc107;
   }
 
+  .card {
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .card:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  /* Membesarkan card saat dihover */
+  }
   /* Media query untuk versi mobile */
   @media (max-width: 768px) {
   .caption {

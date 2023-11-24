@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\Post;
+use App\Models\Review;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,11 +19,13 @@ public function dashboard()
     $galeriesCount = Gallery::count();
     $servicesCount = Service::count();
     $categoriesCount = Category::count();
+    $reviewsCount = Review::count();
+    
     return view('dashboard.index', [
             'title' => 'Dashboard',
             'active' => 'dashboard'
         ],
-     compact('postsCount','usersCount', 'galeriesCount' , 'servicesCount' , 'categoriesCount'));
+     compact('postsCount','usersCount', 'galeriesCount' , 'servicesCount' , 'categoriesCount', 'reviewsCount'));
 }
 
 }

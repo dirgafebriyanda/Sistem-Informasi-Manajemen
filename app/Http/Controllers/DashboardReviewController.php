@@ -14,8 +14,15 @@ class DashboardReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::all();
-        return view('reviews.index', compact('reviews'));
+        $reviews = Review::latest()->paginate(10);
+        return view(
+            'dashboard.ulasan.index',
+            [
+                'title' => 'List Ulasan',
+                'active' => 'ulasan',
+            ],
+            compact('reviews'),
+        );
     }
 
     /**
@@ -89,6 +96,11 @@ class DashboardReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::findOrFail($id);
+        $ownerName = $review->name; // Assuming there's a 'user' relationship in the Review model
+
+        $review->delete();
+
+        return redirect('/dashboard/ulasan')->with('success', "Ulasan $ownerName berhasil dihapus");
     }
 }

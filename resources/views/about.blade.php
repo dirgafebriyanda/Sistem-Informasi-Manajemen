@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center mt-4" style="overflow: hidden">
             <div class="col-md-4" data-aos="fade-right">
-                <img class="img-fluid img-thumbnail" src="{{ asset('img/about-tennis.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/about-tennis.png') }}" alt="">
             </div>
             <div class="col-md-4" data-aos="fade-right">
 
@@ -24,7 +24,7 @@
         </div>
         <div class="row justify-content-center mt-4" style="overflow: hidden">
             <div class="col-md-4" data-aos="fade-right">
-                <img class="img-fluid img-thumbnail" src="{{ asset('img/about-badminton.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('img/about-badminton.png') }}" alt="">
             </div>
             <div class="col-md-4" data-aos="fade-left">
                 <h5 class="fw-bold">Service Raket Badminton</h5>
