@@ -1,12 +1,12 @@
 @extends('dashboard.layouts.main')
 
-@section('content')
+@section('dashboard')
     <div class="row justify-content-center">
-        <div class="col-md-12 mb-4 mt-5">
+        <div class="col-md-12 py-4">
             <div class="card shadow-sm">
                 <div class="card-header ">
                     <a class="text-decoration-none" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i>
-                        {{ __('Dashboard') }}</a> / List Post
+                        {{ __('Dashboard') }}</a> / Posts List
                     <a class="btn btn-sm btn-primary d-inline float-right" href="/dashboard/posts/create" title="Add"><i
                             class="fa fa-plus-square"></i></a>
                 </div>
@@ -24,8 +24,9 @@
                             <thead>
                                 <tr class="bg-dark text-light fw-bold">
                                     <th scope="col">No</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Category</th>
+                                    <th scope="col">Judul</th>
+                                    <th scope="col">Kategori</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -35,6 +36,13 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->category->name }}</td>
+                                        <td>
+                                            @if ($post->published_at)
+                                                Publish
+                                            @else
+                                                Draft
+                                            @endif
+                                        </td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-sm-4">
@@ -65,7 +73,27 @@
                         </table>
                     </div>
                 </div>
+                <div class="container-fluid mt-3">
+                    <style>
+                        .pagination {
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                        }
+                    </style>
+                    <!-- Pagination -->
+                    @if ($posts->hasPages())
+                        <div class="d-flex justify-content-end">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination flex-wrap">
+                                    {{ $posts->links() }}
+                                </ul>
+                            </nav>
+                        </div>
+                    @endif
+                    <!-- End Pagination -->
+                </div>
+
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

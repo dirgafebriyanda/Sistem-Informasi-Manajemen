@@ -1,13 +1,13 @@
 @extends('dashboard.layouts.main')
 
-@section('content')
+@section('dashboard')
     <div class="container">
         <div class="row mb-5 justify-content-center mt-3">
             <div class="col-md-8">
                 <h1 class="mb-3">{{ $post->title }}</h1>
 
                 <a href="/dashboard/posts" class="btn btn-success btn-sm"><span data-feather="arrow-left"></span> Back to all
-                    my posts</a>
+                    Posts List </a>
                 <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning btn-sm"><span
                         data-feather="edit"></span> Edit</a>
                 <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
@@ -18,7 +18,7 @@
                 </form>
                 @if ($post->image)
                     <div>
-                        <img src="{{ asset('post-images/' . $post->image) }}" alt="{{ $post->category->name }}"
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}"
                             class="img-fluid mt-3">
                     </div>
                 @else

@@ -23,6 +23,8 @@ class CreatePostsTable extends Migration
             $table->string('image')->nullable();
             $table->text('body');
             $table->timestamp('published_at')->nullable();
+            $table->integer('likes')->default(0);
+            $table->foreignId('comments')->default(0);
             $table->timestamps();
         });
     }

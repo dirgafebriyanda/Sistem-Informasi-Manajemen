@@ -1,14 +1,14 @@
 @extends('dashboard.layouts.main')
 
-@section('content')
+@section('dashboard')
     <div class="row justify-content-center">
-        <div class="col-md-12 mb-4 mt-5">
+        <div class="col-md-12 py-4">
             <div class="card shadow-sm">
                 <div class="card-header">
                     <a class="text-decoration-none" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i>
                         {{ __('Dashboard') }}</a> / <a class="text-decoration-none"
                         href="/dashboard/galleries">{{ __('Gallery List') }}</a>
-                    / Edit
+                    / Edit Gallery
                 </div>
                 <div class="card-body">
                     <form action="{{ route('galleries.update', $gallery->id) }}" method="post"
@@ -17,11 +17,13 @@
                         @method('PUT')
                         <div class="mb-3 row">
                             <div class="col-md-12">
+                                <input type="hidden" name="oldImage" value="{{ $gallery->image }}">
                                 @if ($gallery->image)
-                                    <img src="{{ asset('images/' . $gallery->image) }}" alt="Gambar Sebelumnya"
+                                    <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gambar Sebelumnya"
                                         class="img-thumbnail mb-2" style="max-width: 200px;" id="previewImage">
                                 @else
-                                    <p>Tidak ada gambar sebelumnya.</p>
+                                    <img src="{{ asset('img/default.png') }}" class="img-preview img-thumbnail mb-3"
+                                        style="max-width: 200px;" alt="No Image">
                                 @endif
                             </div>
                         </div>
@@ -52,7 +54,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="float-right btn btn-primary btn-sm">Save</button>
+                        <button type="submit" class="float-right btn btn-primary btn-sm">Update</button>
                     </form>
                 </div>
             </div>

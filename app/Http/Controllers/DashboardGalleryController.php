@@ -32,11 +32,8 @@ class DashboardGalleryController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
-            $data['image'] = $imageName;
+        if ($request->file('image')) {
+            $data['image'] = $request->file('image')->store('gallery-images');
         }
 
         Gallery::create($data);
@@ -57,34 +54,18 @@ class DashboardGalleryController extends Controller
         );
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Gallery $gallery)
     {
         $data = $request->validate([
             'name' => 'required|max:255',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $gallery = Gallery::findOrFail($id);
-
-        // Jika ada gambar baru yang diunggah, hapus gambar lama
-        if ($request->hasFile('image')) {
-            // Pastikan gambar lama ada sebelum dihapus
-            if ($gallery->image) {
-                $imagePath = public_path('images') . '/' . $gallery->image;
-
-                // Hapus gambar lama dari penyimpanan
-                if (file_exists($imagePath)) {
-                    @unlink($imagePath);
-                }
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
             }
-
-            // Simpan gambar baru ke penyimpanan
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
-
-            // Update nama gambar baru pada model galeri
-            $data['image'] = $imageName;
+            $data['image'] = $request->file('image')->store('gallery-images');
         }
 
         // Update data lainnya
@@ -93,23 +74,11 @@ class DashboardGalleryController extends Controller
         return redirect('/dashboard/galleries')->with('success', 'Image in the gallery has been updated!');
     }
 
-    public function destroy($id)
+    public function destroy(Gallery $gallery)
     {
-        $gallery = Gallery::findOrFail($id);
-
-        // Pastikan gambar ada sebelum dihapus
         if ($gallery->image) {
-            $imagePath = public_path('images') . '/' . $gallery->image;
-
-            // Hapus gambar dari penyimpanan
-            if (file_exists($imagePath)) {
-                @unlink($imagePath);
-            }
-
-            // Hapus nama gambar dari model galeri
-            $gallery->update(['image' => null]);
+            Storage::delete($gallery->image);
         }
-
         // Hapus galeri dari database
         $gallery->delete();
 

@@ -9,36 +9,44 @@ use App\Models\User;
 
 class PostController extends Controller
 {
-    public function index()
-    {
-        $title = '';
-        if (request('category')) {
-            $category = Category::firstWhere('slug', request('category'));
-            $title = ' Kategori ' . $category->name;
-        }
-        if (request('author')) {
-            $author = User::firstWhere('username', request('author'));
-            $title = ' Oleh ' . $author->name;
-        }
-
-        $posts = Post::latest()
-            ->filter(request(['search', 'category', 'author']))
-            ->paginate(7)
-            ->withQueryString();
-
-        return view('posts', [
-            'title' => 'Bengkel Sport Kreatif - Blog & Berita' . $title,
-            'active' => 'blog',
-            'posts' => $posts,
-        ]);
+   public function index()
+{
+    $title = '';
+    if (request('category')) {
+        $category = Category::firstWhere('slug', request('category'));
+        $title = ' Kategori ' . $category->name;
     }
+    if (request('author')) {
+        $author = User::firstWhere('username', request('author'));
+        $title = ' Oleh ' . $author->name;
+    }
+
+    $posts = Post::latest()
+        ->whereNotNull('published_at') // Hanya ambil data yang memiliki published_at
+        ->filter(request(['search', 'category', 'author']))
+        ->paginate(7)
+        ->withQueryString();
+    $categories = Category::all();
+
+    return view('posts', [
+        'title' => 'Bengkel Sport Kreatif - Blog & Berita' . $title,
+        'active' => 'blog',
+        'posts' => $posts,
+        'categories' => $categories,
+    ]);
+}
+
 
     public function show(Post $post)
     {
+        $posts = Post::All();
+        $categories = Category::All();
         return view('post', [
             'title' => 'Blog & Berita',
             'active' => 'blog',
             'post' => $post,
+            'posts' => $posts,
+            'categories' => $categories,
         ]);
     }
 }

@@ -1,40 +1,41 @@
 @extends('layouts.main')
 
 @section('content')
-    <main>
-        <div class="album py-3 bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center" id="galleryContainer"
-                    style="overflow: hidden">
-                    @foreach ($galleries->take(6) as $gallery)
-                        <div class="col" data-aos="slide-up">
-                            <div class="card shadow-sm">
-                                <img src="{{ asset('images/' . $gallery->image) }}" alt="Gambar Galeri">
-                                <div class="card-body">
-                                    <p class="card-text">{{ $gallery->name }}</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a href="{{ route('gallery.show', $gallery->id) }}"
-                                                class="btn btn-sm btn-danger">Lihat</a>
-                                            <a href="{{ route('gallery.download', $gallery->id) }}"
-                                                class="btn btn-sm btn-dark">Unduh</a>
+    <section id="galeri" class="mt-5">
+        <main>
+            <div class="album py-3 bg-body-tertiary">
+                <div class="container-fluid">
+                    <div class="row" id="galleryContainer" style="overflow: hidden">
+                        @foreach ($galleries->take(6) as $gallery)
+                            <div class="col-md-4" data-aos="slide-up">
+                                <div class="card shadow-sm">
+                                    <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gambar Galeri">
+                                    <div class="card-body">
+                                        <p class="card-text">{{ $gallery->name }}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a href="{{ route('gallery.show', $gallery->id) }}"
+                                                    class="btn btn-sm btn-danger">Lihat</a>
+                                                <a href="{{ route('gallery.download', $gallery->id) }}"
+                                                    class="btn btn-sm btn-dark">Unduh</a>
+                                            </div>
+                                            <small
+                                                class="text-body-secondary">{{ $gallery->created_at->diffForHumans(null, true) }}</small>
                                         </div>
-                                        <small
-                                            class="text-body-secondary">{{ $gallery->created_at->diffForHumans(null, true) }}</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="text-center mt-3" id="loadMoreContainer">
-                    @if ($galleries->count() > 6)
-                        <button id="loadMoreBtn" class="btn btn-dark">Tampilkan Lebih Banyak</button>
-                    @endif
+                        @endforeach
+                    </div>
+                    <div class="text-center mt-3" id="loadMoreContainer">
+                        @if ($galleries->count() > 6)
+                            <button id="loadMoreBtn" class="btn btn-dark">Tampilkan Lebih Banyak</button>
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

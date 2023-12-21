@@ -1,14 +1,14 @@
 @extends('dashboard.layouts.main')
 
-@section('content')
+@section('dashboard')
     <div class="row justify-content-center">
-        <div class="col-md-12 mb-4">
+        <div class="col-md-12 py-4">
             <div class="card shadow-sm">
                 <div class="card-header">
                     <a class="text-decoration-none" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i>
                         {{ __('Dashboard') }}</a> / <a class="text-decoration-none"
-                        href="/dashboard/posts">{{ __('Post List') }}</a>
-                    / Add
+                        href="/dashboard/posts">{{ __('Posts List') }}</a>
+                    / Create Post
                 </div>
                 <div class="card-body">
                     <form action="/dashboard/posts" method="post" enctype="multipart/form-data">
@@ -48,6 +48,15 @@
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endif
                                     @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                                <select class="form-control" name="published_at" id="category">
+                                    <option value="" selected disabled>Pilih Status</option>
+                                    <option value="{{ now() }}">Publish</option>
+                                    <option value="">Draft</option>
                                 </select>
                             </div>
                         </div>
@@ -107,6 +116,32 @@
 
             oFReader.onload = function(oFReaderEvent) {
                 imgPreview.src = oFReaderEvent.target.result;
+            }
+        }
+    </script>
+    <script>
+        // Pemulihan konten dari Local Storage saat halaman dimuat
+        window.addEventListener('DOMContentLoaded', function() {
+            restoreFromLocalStorage();
+            // Inisialisasi Trix Editor
+            var trixEditor = document.querySelector('trix-editor');
+            trixEditor.addEventListener('trix-change', saveToLocalStorage);
+        });
+
+        // Autosave sebelum halaman direfresh
+        window.addEventListener('beforeunload', function() {
+            saveToLocalStorage();
+        });
+
+        function saveToLocalStorage() {
+            var bodyContent = document.querySelector('trix-editor').value;
+            localStorage.setItem('editorContent', bodyContent);
+        }
+
+        function restoreFromLocalStorage() {
+            var savedContent = localStorage.getItem('editorContent');
+            if (savedContent) {
+                document.querySelector('trix-editor').value = savedContent;
             }
         }
     </script>

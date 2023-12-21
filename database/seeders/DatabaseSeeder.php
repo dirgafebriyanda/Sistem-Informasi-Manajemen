@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      *
-     * @return void 
+     * @return void
      */
     public function run()
     {
@@ -20,20 +20,60 @@ class DatabaseSeeder extends Seeder
             'name' => 'Dirga Febriyanda',
             'username' => 'dirgafebriyanda',
             'email' => 'dirgafebriyanda12@gmail.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
+            'is_admin' => 1,
         ]);
 
         Category::create([
-            'name' => 'Blog',
-            'slug' => 'blog'
+            'name' => 'Berita Olahraga',
+            'slug' => 'berita-olahraga',
         ]);
+
         Category::create([
-            'name' => 'Berita',
-            'slug' => 'berita'
+            'name' => 'Tips dan Trik',
+            'slug' => 'tips-dan-trik',
         ]);
-       
 
-        Post::factory(11)->create();
+        Category::create([
+            'name' => 'Kesehatan',
+            'slug' => 'kesehatan',
+        ]);
 
+        Category::create([
+            'name' => 'Teknologi',
+            'slug' => 'teknologi',
+        ]);
+
+        Category::create([
+            'name' => 'Hiburan',
+            'slug' => 'hiburan',
+        ]);
+
+        Category::create([
+            'name' => 'Bisnis',
+            'slug' => 'bisnis',
+        ]);
+
+        Category::create([
+            'name' => 'Fashion',
+            'slug' => 'fashion',
+        ]);
+
+        Category::create([
+            'name' => 'Pendidikan',
+            'slug' => 'pendidikan',
+        ]);
+
+        Category::create([
+            'name' => 'Seni dan Budaya',
+            'slug' => 'seni-dan-budaya',
+        ]);
+
+        Category::create([
+            'name' => 'Wisata',
+            'slug' => 'wisata',
+        ]);
+
+        Post::factory(20)->create();
     }
 }

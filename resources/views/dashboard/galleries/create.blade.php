@@ -1,14 +1,14 @@
 @extends('dashboard.layouts.main')
 
-@section('content')
+@section('dashboard')
     <div class="row justify-content-center">
-        <div class="col-md-12 mb-4 mt-5">
+        <div class="col-md-12 py-4">
             <div class="card shadow-sm">
                 <div class="card-header">
                     <a class="text-decoration-none" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i>
                         {{ __('Dashboard') }}</a> / <a class="text-decoration-none"
                         href="/dashboard/galleries">{{ __('Gallery List') }}</a>
-                    / Add
+                    / Create Gallery
                 </div>
                 <div class="card-body">
                     <form action="{{ route('galleries.store') }}" method="post" enctype="multipart/form-data">

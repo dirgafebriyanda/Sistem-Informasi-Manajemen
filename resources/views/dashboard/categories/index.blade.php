@@ -1,12 +1,12 @@
 @extends('dashboard.layouts.main')
 
-@section('content')
+@section('dashboard')
     <div class="row justify-content-center">
-        <div class="col-md-12 mb-4 mt-5">
+        <div class="col-md-12 py-4">
             <div class="card shadow-sm">
                 <div class="card-header">
                     <a class="text-decoration-none" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i>
-                        {{ __('Dashboard') }}</a> / List Kategori
+                        {{ __('Dashboard') }}</a> / Categories List
                     <a href="/dashboard/categories/create" class="btn btn-sm btn-primary mb-3 float-right" title="Add"><i
                             class="fa fa-plus-square"></i></a>
                 </div>

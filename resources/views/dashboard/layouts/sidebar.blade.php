@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <img src="{{ asset('img/icon/putih.png') }}" alt="" class="img-fluid">
     </a>
 
@@ -23,31 +23,31 @@
     <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
             <i class="fas fa-newspaper"></i>
-            <span>Post</span>
+            <span>Posts</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/services*') ? 'active' : '' }}" href="/dashboard/services">
             <i class="fas fa-tools"></i>
-            <span>Layanan</span>
+            <span>Services</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/galleries*') ? 'active' : '' }}" href="/dashboard/galleries">
             <i class="fas fa-images"></i>
-            <span>Galeri</span>
+            <span>Galleries</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('dashboard/testimoni*') ? 'active' : '' }}" href="/dashboard/galleries">
-            <i class="fas fa-comment"></i>
-            <span>Testimoni</span>
+        <a class="nav-link {{ Request::is('dashboard/ulasan*') ? 'active' : '' }}" href="/dashboard/ulasan">
+            <i class="fas fa-images"></i>
+            <span>Reviews</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/galleries*') ? 'active' : '' }}" href="/dashboard/galleries">
             <i class="fas fa-comment-alt"></i>
-            <span>Kritik dan Saran</span>
+            <span>Faq</span>
         </a>
     </li>
 
@@ -56,11 +56,11 @@
         <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
                 <i class="fas fa-list"></i>
-                <span>Kategori</span>
+                <span>Categories</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}" href="/dashboard/categories">
+            <a class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}" href="/dashboard/users">
                 <i class="fas fa-users"></i>
                 <span>Users</span>
             </a>

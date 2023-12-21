@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Post; // Pastikan untuk mengimport model Post jika belum diimport
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -16,13 +17,12 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(2, 8)),
-'slug' => $this->faker->slug(),
-'excerpt' => $this->faker->sentence(mt_rand(5, 15)), // Menggunakan sentence untuk excerpt.
-'body' => collect($this->faker->paragraphs(mt_rand(5, 10)))->map(fn ($p) => "<p>$p</p>")->implode(''),
-'user_id' => User::inRandomOrder()->first()->id, // Mengambil pengguna secara acak.
-'category_id' => Category::inRandomOrder()->first()->id, // Mengambil kategori secara acak.
-
+            'title' => $this->faker->sentence,
+            'slug' => $this->faker->slug,
+            'excerpt' => $this->faker->paragraph(mt_rand(5, 15)),
+            'body' => $this->faker->paragraphs(mt_rand(5, 10), true),
+            'user_id' => User::inRandomOrder()->first()->id,
+            'category_id' => Category::inRandomOrder()->first()->id,
         ];
     }
 }

@@ -1,20 +1,21 @@
 <?php
 
 use App\Http\Controllers\DashboardCategoryController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\DashboardPostController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardGalleryController;
 use App\Http\Controllers\DashboardReviewController;
-use App\Http\Controllers\GaleriController;
-use App\Models\Category;
-use App\Models\User;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
+use App\Models\Category;
+use App\Models\Post;
 use App\Models\Review;
+use App\Models\User;
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,10 +27,13 @@ use App\Models\Review;
 |
 */
 
+Route::get('/test', function () {
+    return view('test');
+});
 Route::get('/page-not-found', function () {
     return view('errors.404');
 });
-
+Route::patch('/posts/{post}/update-publishad-at', 'PostController@updatePublishadAt');
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
 Route::get('/gallery/{id}', [GaleriController::class, 'show'])->name('gallery.show');
 Route::get('/gallery/{id}/download', [GaleriController::class, 'download'])->name('gallery.download');
@@ -44,18 +48,12 @@ Route::get('/layanan', function () {
 Route::get('/', function () {
     // Ambil data ulasan dari database
     $reviews = Review::orderByDesc('rating')->get();
-
+    $posts = Post::orderByDesc('id')->get();
     return view('home', [
         'active' => 'beranda',
         'title' => 'Bengkel Sport Kreatif',
         'reviews' => $reviews, // Mengirimkan data ulasan ke tampilan
-    ]);
-});
-
-Route::get('/testimoni', function () {
-    return view('testimoni', [
-        'active' => 'testimoni',
-        'title' => 'Bengkel Sport Kreatif - Testimoni',
+        'posts' => $posts, // Mengirimkan data ulasan ke tampilan
     ]);
 });
 
@@ -66,15 +64,21 @@ Route::get('/kritik-dan-saran', function () {
     ]);
 });
 
-Route::get('/tentang', function () {
+Route::get('/tentang-kami', function () {
     return view('about', [
         'active' => 'tentang',
         'title' => 'Bengkel Sport Kreatif - Tentang',
     ]);
 });
+Route::get('/kebijakan-privasi', function () {
+    return view('kebijakan', [
+        'active' => 'kebijakan',
+        'title' => 'Bengkel Sport Kreatif - Kebijakan Privasi',
+    ]);
+});
 
-Route::get('/blog-dan-berita', [PostController::class, 'index']);
-Route::get('/blog-dan-berita/{post:slug}', [PostController::class, 'show']);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', function () {
     return view('categories', [
@@ -116,11 +120,12 @@ Route::resource('/dashboard/categories', DashboardCategoryController::class)
 Route::resource('/dashboard/services', ServiceController::class)->middleware('auth');
 Route::resource('/dashboard/galleries', DashboardGalleryController::class)->middleware('auth');
 
-Route::resource('/dashboard/users', UserController::class)->middleware('admin');
+Route::resource('/dashboard/users', DashboardUserController::class)->middleware('admin');
+Route::get('/dashboard/users/show', [DashboardUserController::class, 'show'])->name('show')->middleware('auth');;
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 
-Route::post('/ulasan', [DashboardReviewController::class, 'store'])->name('ulasan.store');
+Route::post('/ulasan', [DashboardReviewController::class, 'store']);
 
 
 Route::resource('dashboard/ulasan', DashboardReviewController::class)->middleware('auth');;

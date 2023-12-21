@@ -1,17 +1,17 @@
 @extends('dashboard.layouts.main')
 
-@section('content')
+@section('dashboard')
     <div class="row justify-content-center">
-        <div class="col-md-12 mb-4">
+        <div class="col-md-12 py-4">
             <div class="card shadow-sm">
                 <div class="card-header">
                     <a href="/dashboard" class="text-decoration-none">
                         <i class="fas fa-fw fa-tachometer-alt"></i> {{ __('Dashboard') }}
                     </a> /
                     <a href="/dashboard/posts" class="text-decoration-none">
-                        {{ __('Post List') }}
+                        {{ __('Blog & News List') }}
                     </a>
-                    / Edit
+                    / Edit Post
                 </div>
                 <div class="card-body">
                     <form action="/dashboard/posts/{{ $post->slug }}" method="post" enctype="multipart/form-data">
@@ -19,7 +19,6 @@
                         @csrf
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <label for="title" class="form-label">Title</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror"
                                     id="title" name="title" value="{{ old('title', $post->title) }}" autofocus>
                                 @error('title')
@@ -31,7 +30,6 @@
                         </div>
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <label for="slug" class="form-label">Slug</label>
                                 <input type="text" class="form-control @error('slug') is-invalid @enderror"
                                     id="slug" name="slug" value="{{ old('slug', $post->slug) }}" readonly>
                                 @error('slug')
@@ -55,11 +53,25 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="mb-3 row">
+                            <div class="col-md-12">
+                                <select class="form-control" name="published_at" id="category">
+                                    <option value="" disabled>Pilih Status</option>
+                                    <option value="{{ now() }}"
+                                        {{ old('published_at', $post->published_at) == $post->published_at ? 'selected' : '' }}>
+                                        Publish
+                                    </option>
+                                    <option value=""
+                                        {{ old('published_at', $post->published_at) === null ? 'selected' : '' }}>Draft
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <input type="hidden" name="oldImage" value="{{ $post->image }}">
                                 @if ($post->image)
-                                    <img src="{{ asset('post-images/' . $post->image) }}"
+                                    <img src="{{ asset('storage/' . $post->image) }}"
                                         class="img-preview img-thumbnail mb-3" alt="Post Image" style="max-width: 200px;">
                                 @else
                                     <img src="{{ asset('img/default.png') }}" class="img-preview img-thumbnail mb-3"
@@ -69,7 +81,6 @@
                         </div>
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <label for="image" class="form-label">Image</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror"
                                     name="image" id="image" onchange="previewImage()">
                                 @error('image')
@@ -81,7 +92,6 @@
                         </div>
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <label for="body" class="form-label">Body</label>
                                 <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
                                 <trix-editor input="body"></trix-editor>
                                 @error('body')
@@ -89,7 +99,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary float-right btn-sm">Edit</button>
+                        <button type="submit" class="btn btn-primary float-right btn-sm">Update</button>
                     </form>
                 </div>
             </div>

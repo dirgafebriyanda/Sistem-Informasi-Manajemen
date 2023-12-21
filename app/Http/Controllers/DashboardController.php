@@ -9,12 +9,19 @@ use App\Models\Review;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
 public function dashboard()
 {
-    $postsCount = Post::count();
+    if (Auth::check()) {
+    $userID = Auth::id();
+    $postsCount = Post::where('user_id', $userID)->count();
+} else {
+    // User tidak terautentikasi
+    $postsCount = 0; // Atau atur ke nilai default sesuai kebutuhan
+}
     $usersCount = User::count();
     $galeriesCount = Gallery::count();
     $servicesCount = Service::count();
