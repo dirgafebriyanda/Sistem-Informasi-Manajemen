@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container-fluid mt-5">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-6 bg-light">
                 <header>
-                    <h1 class="mb-4">Kebijakan Privasi</h1>
+                    <h1 class="mb-4 mt-3 text-center">Kebijakan Privasi</h1>
                     <p>Terakhir diperbarui: {{ date('d F Y') }}</p>
                 </header>
 
@@ -78,13 +78,6 @@
                     <p>Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Perubahan akan segera berlaku
                         setelah
                         diperbarui di halaman ini.</p>
-                </section>
-
-                <section class="mb-4">
-                    <h2>Hubungi Kami</h2>
-                    <p>Jika Anda memiliki pertanyaan atau komentar tentang kebijakan privasi ini, silakan hubungi kami
-                        melalui <a href="mailto:info@bskreatif.com">info@bskreatif.com</a> atau melalui <a
-                            href="/kontak">Formulir Kontak</a>.</p>
                 </section>
 
                 <footer>

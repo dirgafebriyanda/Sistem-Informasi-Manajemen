@@ -10,10 +10,12 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Review;
 use App\Models\User;
+use App\Http\Controllers\SaranController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -57,13 +59,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/kritik-dan-saran', function () {
-    return view('kritikdansaran', [
-        'active' => 'kritik',
-        'title' => ' Bengkel Sport Kreatif - Kritik dan Saran',
-    ]);
-});
-
 Route::get('/tentang-kami', function () {
     return view('about', [
         'active' => 'tentang',
@@ -103,9 +98,17 @@ Route::get('/authors/{author:username}', function (User $author) {
     ]);
 });
 
+Route::get('/register', [RegisterController::class, 'index'])
+    ->name('register')
+    ->middleware('guest');
+
+Route::post('/register', [RegisterController::class, 'store'])
+    ->name('register.store');
+
 Route::get('/login', [LoginController::class, 'index'])
     ->name('login')
     ->middleware('guest');
+    
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -114,18 +117,19 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 Route::get('/dashboard/categories/checkSlug', [DashboardCategoryController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/categories', DashboardCategoryController::class)
-    ->except('show')
-    ->middleware('admin');
+    ->except('show');
 
 Route::resource('/dashboard/services', ServiceController::class)->middleware('auth');
 Route::resource('/dashboard/galleries', DashboardGalleryController::class)->middleware('auth');
 
-Route::resource('/dashboard/users', DashboardUserController::class)->middleware('admin');
-Route::get('/dashboard/users/show', [DashboardUserController::class, 'show'])->name('show')->middleware('auth');;
+Route::resource('/dashboard/users', DashboardUserController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 
 Route::post('/ulasan', [DashboardReviewController::class, 'store']);
 
+Route::resource('dashboard/ulasan', DashboardReviewController::class)->middleware('auth');
 
-Route::resource('dashboard/ulasan', DashboardReviewController::class)->middleware('auth');;
+Route::resource('dashboard/saran', SaranController::class)->middleware('auth');
+Route::get('/kritik-dan-saran', [SaranController::class, 'create'])->name('saran');
+Route::post('/kritik-dan-saran', [SaranController::class, 'store'])->name('saran.store');

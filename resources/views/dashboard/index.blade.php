@@ -59,13 +59,18 @@
                             </a>
                         </div>
                         <div class="col-sm-4 py-3">
-                            <div class="card bg-success hvr-float-shadow w-100">
-                                <div class="card-body">
-                                    <i class="fas fa-comment-alt fa-3x mb-3 text-white"></i>
-                                    <h5 class="card-title text-white">Faq List <span class="badge badge-light">8</span></h5>
+                            <a href="/dashboard/saran" class="text-decoration-none">
+                                <div class="card bg-success hvr-float-shadow w-100">
+                                    <div class="card-body">
+                                        <i class="fas fa-comment-alt fa-3x mb-3 text-white"></i>
+                                        <h5 class="card-title text-white">Faq List
+                                            <span class="badge badge-light">{{ $saranCount }}</span>
+                                        </h5>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
+
                         @can('admin')
                             <div class="col-sm-4 py-3">
                                 <a href="/dashboard/categories" class="text-decoration-none">

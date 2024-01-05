@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID">
 
 <head>
+    <meta name="google-adsense-account" content="ca-pub-6662238541125053">
     <meta name="google-site-verification" content="WKij0qlmTeTVDvFcp2-2NE9jQMPhnX4CRjiCvjTMsyI" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
@@ -28,6 +29,8 @@
     <link rel="canonical" href="https://www.bskreatif.com/">
     <link rel="icon" type="image/png" sizes="228x228" href="{{ asset('favicon.png') }}">
     <title>{{ $title }} | Jasa Memeperbaiki Raket</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6662238541125053"
+        crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
         rel="stylesheet" />
@@ -41,8 +44,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-
 </head>
 
 <body>

@@ -16,13 +16,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'Dirga Febriyanda',
-            'username' => 'dirgafebriyanda',
-            'email' => 'dirgafebriyanda12@gmail.com',
-            'password' => bcrypt('password'),
-            'is_admin' => 1,
-        ]);
+        User::create(
+    [
+        'name' => 'Dirga Febriyanda',
+        'username' => 'dirga1202',
+        'jekel' => 'laki-laki',
+        'email' => 'dirgafebriyanda12@gmail.com',
+        'password' => bcrypt('password'),
+        'is_admin' => '1',
+    ]);
+        User::create(
+    [
+        'name' => 'Sonia Larasati',
+        'username' => 'sonia2107',
+        'jekel' => 'perempuan',
+        'email' => 'sonialarasati21@gmail.com',
+        'password' => bcrypt('password'),
+        'is_admin' => '0',
+    ]);
+        User::create(
+    [
+        'name' => 'Faisal Noor',
+        'username' => 'faisalnoor',
+        'jekel' => 'laki-laki',
+        'email' => 'faisalnoor@gmail.com',
+        'password' => bcrypt('password'),
+        'is_admin' => '0',
+    ]);
+
 
         Category::create([
             'name' => 'Berita Olahraga',

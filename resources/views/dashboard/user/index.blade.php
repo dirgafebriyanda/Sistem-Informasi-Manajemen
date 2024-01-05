@@ -40,11 +40,11 @@
                                                 <div class="rounded-circle overflow-hidden"
                                                     style="width: 30px; height: 30px; margin-right: 10px;">
                                                     @if ($user->image)
-                                                        <img src="{{ asset('img/user/' . $user->image) }}" alt="User Image"
+                                                        <img src="{{ asset('storage/' . $user->image) }}" alt="User Image"
                                                             class="w-100 h-100 object-cover">
                                                     @else
-                                                        <img src="{{ asset('img/undraw_profile.svg') }}" alt="Default Image"
-                                                            class="w-100 h-100 object-cover">
+                                                        <img src="{{ $user->jekel == 'laki-laki' ? asset('img/user/laki-laki.png') : asset('img/user/perempuan.png') }}"
+                                                            alt="Default Image" class="w-100 h-100 object-cover">
                                                     @endif
                                                 </div>
                                                 <span>{{ $user->name }}</span>

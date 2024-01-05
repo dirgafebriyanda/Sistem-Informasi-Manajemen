@@ -57,7 +57,7 @@
             </div>
             <div class="col-md-12">
                 <div class="bg-dark text-white p-2 text-end">
-                    <a class="text-white text-decoration-none me-3" href="/kritik-dan-saran">Kritik dan Saran</a>
+                    <a class="text-white text-decoration-none me-3" href="{{ route('saran') }}">Kritik dan Saran</a>
                     <a class="text-white text-decoration-none" href="/kebijakan-privasi">Kebijakan Privasi</a>
                 </div>
             </div>

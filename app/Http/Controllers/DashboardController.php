@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\Review;
+use App\Models\Saran;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,12 +28,13 @@ public function dashboard()
     $servicesCount = Service::count();
     $categoriesCount = Category::count();
     $reviewsCount = Review::count();
+    $saranCount = Saran::count();
     
     return view('dashboard.index', [
             'title' => 'Dashboard',
             'active' => 'dashboard'
         ],
-     compact('postsCount','usersCount', 'galeriesCount' , 'servicesCount' , 'categoriesCount', 'reviewsCount'));
+     compact('postsCount','usersCount', 'galeriesCount' , 'servicesCount' , 'categoriesCount', 'reviewsCount' ,'saranCount'));
 }
 
 }

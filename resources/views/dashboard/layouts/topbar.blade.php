@@ -16,14 +16,15 @@
                 aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline small">{{ auth()->user()->name }}</span>
                 @if (auth()->user()->image)
-                    <img class="img-profile rounded-circle" src="{{ asset('img/user/' . auth()->user()->image) }}">
+                    <img class="img-profile rounded-circle" src="{{ asset('storage/' . auth()->user()->image) }}">
                 @else
-                    <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
+                    <img src="{{ auth()->user()->jekel == 'laki-laki' ? asset('img/user/laki-laki.png') : asset('img/user/perempuan.png') }}"
+                        alt="Default Image" class="img-profile rounded-circle">
                 @endif
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{ route('show') }}">
+                <a class="dropdown-item" href="/dashboard/users/{{ auth()->user()->id }}">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>

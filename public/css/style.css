@@ -6,24 +6,6 @@
   html {
   scroll-behavior: smooth;
   }
-
-  .form-signin .form-floating:focus-within {
-  z-index: 1;
-  }
-
-  .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-radius: 5px;
-  }
-
-  .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-radius: 5px;
-  }
   
   .navbar-light .navbar-nav .nav-link.active {
   color: #e2e2e2;
@@ -58,9 +40,7 @@
   .persuasif {
   font-size: 3.2em;
   }
-  .btn-custome:hover {
-  transform: scale(1.1); /* Membesarkan tombol saat dihover */
-  }
+
 
 .card-home {
   border-radius: 20px 90px 20px 90px;

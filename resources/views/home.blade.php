@@ -292,23 +292,23 @@
             <div class="row mt-4 fs-5 justify-content-center" style="overflow: hidden">
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/1.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark   hvr-grow card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/2.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark   hvr-grow card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark card-home" />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/3.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark   hvr-grow card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/4.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark   hvr-grow card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/5.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark   hvr-grow card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
                 </div>
             </div>
         </div>
@@ -548,9 +548,6 @@
             // Buka link WhatsApp
             window.open(linkWhatsApp, '_blank');
 
-            // Jika Anda ingin mengirim formulir ke server, tambahkan kode AJAX di sini
-            // ...
-
             // Bersihkan formulir setelah dikirim
             document.getElementById('orderForm').reset();
         }
@@ -580,97 +577,4 @@
             }
         });
     </script>
-
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const reviews = @json($reviews->slice(6)->values());
-            const loadMoreBtn = document.getElementById('loadMoreBtn');
-            const reviewContainer = document.getElementById('reviewContainer');
-            const loadMoreContainer = document.getElementById('loadMoreContainer');
-
-            // Tambahkan variabel boolean untuk melacak status tampilan ulasan
-            let showAllReviews = false;
-
-            if (reviews.length === 0) {
-                loadMoreContainer.style.display = 'none';
-            }
-
-            loadMoreBtn.addEventListener('click', function() {
-                // Tampilkan atau sembunyikan ulasan berdasarkan status tampilan
-                if (showAllReviews) {
-                    // Jika tombol "Sembunyikan Ulasan" diklik, kembalikan tampilan ulasan ke 6
-                    reviewContainer.innerHTML = '';
-                    @json($reviews->slice(0, 6)->values()).forEach(function(review) {
-                        const ratingHtml = Array.from({
-                            length: 5
-                        }, (_, index) => {
-                            return index < review.rating ?
-                                '<i class="fas fa-star text-warning"></i>' :
-                                '<i class="fas fa-star text-secondary"></i>';
-                        }).join('');
-
-                        const reviewHtml = `
-                        <div class="col-lg-4 py-4" data-aos="slide-up">
-                            <div class="card  bg-dark text-light hvr-float w-100">
-                                <div class="card-body">
-                                    <p>
-                                        <span class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> ${review.name}</span>
-                                        <br>
-                                        <span class="small px-4">${review.job}</span>
-                                    </p>
-                                    <p class="card-text">${review.comment}</p>
-                                    <span>${ratingHtml}</span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-
-                        reviewContainer.innerHTML += reviewHtml;
-                    });
-
-                    // Ubah teks tombol menjadi "Tampilkan Semua Ulasan"
-                    loadMoreBtn.innerText = 'Tampilkan Semua Ulasan';
-
-                    showAllReviews = false;
-                } else {
-                    // Jika tombol "Tampilkan Semua Ulasan" diklik, tampilkan semua ulasan
-                    reviews.forEach(function(review) {
-                        const ratingHtml = Array.from({
-                            length: 5
-                        }, (_, index) => {
-                            return index < review.rating ?
-                                '<i class="fas fa-star text-warning"></i>' :
-                                '<i class="fas fa-star text-secondary"></i>';
-                        }).join('');
-
-                        const reviewHtml = `
-                        <div class="col-lg-4 py-4" data-aos="slide-up">
-                            <div class="card  bg-dark text-light hvr-float w-100">
-                                <div class="card-body">
-                                    <p>
-                                        <span class="fw-bold"><i class="fas fa-user-circle fa-lg"></i> ${review.name}</span>
-                                        <br>
-                                        <span class="small px-4">${review.job}</span>
-                                    </p>
-                                    <p class="card-text">${review.comment}</p>
-                                    <span>${ratingHtml}</span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-
-                        reviewContainer.innerHTML += reviewHtml;
-                    });
-
-                    // Ubah teks tombol menjadi "Sembunyikan Ulasan"
-                    loadMoreBtn.innerText = 'Sembunyikan Ulasan';
-
-                    showAllReviews = true;
-                }
-
-                // Tambahkan kode untuk menampilkan kembali tombol "Tampilkan Semua Ulasan" setelah di-klik
-                loadMoreContainer.style.display = 'flex';
-            });
-        });
-    </script> --}}
 @endsection

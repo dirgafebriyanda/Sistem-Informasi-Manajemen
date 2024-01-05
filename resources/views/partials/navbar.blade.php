@@ -34,12 +34,11 @@
                 </li> --}}
 
             </ul>
-            {{-- <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto">
                 @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Welcome back, {{ auth()->user()->name }}
+                            aria-expanded="false">{{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item " href="/dashboard"><i class="fas fa-tachometer-alt"></i>
@@ -62,7 +61,7 @@
                             Login</a>
                     </li>
                 </ul>
-            @endauth --}}
+            @endauth
         </div>
     </div>
 </nav>

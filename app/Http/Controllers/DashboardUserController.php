@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardUserController extends Controller
 {
@@ -31,6 +32,7 @@ class DashboardUserController extends Controller
      */
     public function create()
     {
+        $this->authorize('admin');
         return view('dashboard.user.create', [
             'title' => 'Create User',
             'active' => 'user',
@@ -45,7 +47,7 @@ class DashboardUserController extends Controller
      */
     public function store(Request $request)
     {
-        // Validasi input
+        $this->authorize('admin');
         $request->validate([
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
@@ -72,15 +74,14 @@ class DashboardUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-public function show($id)
-{
-    $user = User::find($id);
- return view('dashboard.user.show',[
-    'title' => 'Show',
-    'user' => $user,
-    ]);
-}
-
+    public function show($id)
+    {
+        $user = User::find($id);
+        return view('dashboard.user.show', [
+            'title' => 'Show',
+            'user' => $user,
+        ]);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -108,9 +109,40 @@ public function show($id)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255',
+            'email' => "required|email|max:255|unique:users,email,{$user->id}",
+            'password' => 'nullable|string|min:8|confirmed',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'jekel' => 'required|in:laki-laki,perempuan'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        // Menghapus gambar lama jika ada gambar baru yang diunggah
+        if ($request->file('image')) {
+            if ($user->image) {
+                Storage::delete($user->image);
+            }
+            $validatedData['image'] = $request->file('image')->store('user-images');
+        }
+
+        // Mengupdate password jika ada perubahan
+        if ($request->password) {
+            $validatedData['password'] = Hash::make($request->password);
+        }
+
+        if (auth()->user()->id === $user->id) {
+            // Arahkan ke halaman utama dan tampilkan notifikasi berhasil
+            $user->update($validatedData);
+            return redirect('/dashboard/users/' . $user->id)->with('success', 'Akun Anda berhasil diupdate!');
+        } else {
+            // Arahkan ke indeks pengguna dan tampilkan notifikasi berhasil
+            $user->update($validatedData);
+            return redirect('/dashboard/users')->with('success', "Pengguna $user->name berhasil diupdate!");
+        }
     }
 
     /**
@@ -124,10 +156,17 @@ public function show($id)
         // Temukan pengguna berdasarkan ID
         $user = User::findOrFail($id);
 
-        // Hapus pengguna
-        $user->delete();
-
-        // Redirect ke indeks pengguna dengan notifikasi
-        return redirect('dashboard.users.index')->with('success', "User $user->name deleted successfully!");
+        // Periksa apakah pengguna yang terautentikasi menghapus akun mereka sendiri
+        if (auth()->user()->id === $user->id) {
+            // Arahkan ke halaman utama dan tampilkan notifikasi berhasil
+            $user->delete();
+            auth()->logout(); // Opsional, Anda dapat logout pengguna
+            return redirect('/login')->with('success', 'Akun Anda berhasil dihapus!');
+        } else {
+            $this->authorize('admin');
+            // Arahkan ke indeks pengguna dan tampilkan notifikasi berhasil
+            $user->delete();
+            return redirect('/dashboard/users')->with('success', "Pengguna $user->name berhasil dihapus!");
+        }
     }
 }

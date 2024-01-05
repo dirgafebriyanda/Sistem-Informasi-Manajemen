@@ -4,7 +4,6 @@
     <style>
         .scrollable-column {
             transition: max-height 0.5s ease;
-            border-left: 2px solid #ccc;
             padding: 10px;
             position: fixed;
             top: 0;
@@ -176,132 +175,131 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                {{-- sidebar --}}
+                <div class="col-md-4 scrollable-column py-5 d-none d-md-block" id="scrollableCol">
+                    <p class="mt-3">Postingan Terpopuler :</p>
+                    <ul class="list-group list-group-flush">
+                        @foreach ($posts->sortByDesc('click_count')->take(5) as $post)
+                            <li class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    @if ($post->image)
+                                        <img src="{{ asset('post-images/' . $post->image) }}"
+                                            alt="{{ $post->category->name }}" class="me-2" width="140"
+                                            height="100">
+                                    @else
+                                        <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
+                                            class="me-2 bg-dark rounded-2" width="140" height="100">
+                                    @endif
+                                    <a href="{{ url("/posts-{$post->slug}") }}" class="text-decoration-none text-dark">
+                                        {{ $post->title }}</a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
                     <hr class="my-4">
 
-                    {{-- sidebar --}}
-                    <div class="col-md-4 scrollable-column py-5 d-none d-md-block" id="scrollableCol">
-                        <p class="mt-3">Postingan Terpopuler :</p>
-                        <ul class="list-group list-group-flush">
-                            @foreach ($posts->sortByDesc('click_count')->take(5) as $post)
+                    <p class="mt-3">Postingan Terbaru :</p>
+                    <ul class="list-group list-group-flush">
+                        @foreach ($posts->take(5) as $post)
+                            <li class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    @if ($post->image)
+                                        <img src="{{ asset('post-images/' . $post->image) }}"
+                                            alt="{{ $post->category->name }}" class="me-2" width="140"
+                                            height="100">
+                                    @else
+                                        <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
+                                            class="me-2 bg-dark" width="140" height="100">
+                                    @endif
+                                    <a href="{{ url("/posts-{$post->slug}") }}" class="text-decoration-none text-dark">
+                                        {{ $post->title }}</a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <hr class="my-4">
+
+                    <p class="mt-3">Kategori :</p>
+                    <ul class="list-group list-group-flush">
+                        <div id="categoriesContainer">
+                            @foreach ($categories as $category)
                                 <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                                        @if ($post->image)
-                                            <img src="{{ asset('post-images/' . $post->image) }}"
-                                                alt="{{ $post->category->name }}" class="me-2" width="60"
-                                                height="50">
-                                        @else
-                                            <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
-                                                class="me-2 bg-dark" width="60" height="50">
-                                        @endif
-                                        <a href="{{ url("/posts-{$post->slug}") }}"
-                                            class="text-decoration-none text-dark"> {{ $post->title }}</a>
+                                    <div class="col-md-12 category-item">
+                                        <a href="/posts?category={{ $category->slug }}"
+                                            class="text-decoration-none text-dark">
+                                            {{ $category->name }}
+                                        </a>
+
                                     </div>
                                 </li>
                             @endforeach
-                        </ul>
-                        <hr class="my-4">
+                        </div>
+                    </ul>
+                </div>
 
-                        <p class="mt-3">Postingan Terbaru :</p>
-                        <ul class="list-group list-group-flush">
-                            @foreach ($posts->take(5) as $post)
+                <div class="col-md-4 mt-3 d-md-none d-block">
+                    <p>Postingan Terpopuler :</p>
+                    <ul class="list-group list-group-flush">
+                        @foreach ($posts->sortByDesc('click_count')->take(5) as $post)
+                            <li class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    @if ($post->image)
+                                        <img src="{{ asset('post-images/' . $post->image) }}"
+                                            alt="{{ $post->category->name }}" class="me-2" width="140"
+                                            height="100">
+                                    @else
+                                        <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
+                                            class="me-2 bg-dark" width="140" height="100">
+                                    @endif
+                                    <a href="{{ url("/posts-{$post->slug}") }}"
+                                        class="text-decoration-none text-dark">{{ $post->title }}</a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <hr class="my-4">
+
+                    <p class="mt-3">Postingan Terbaru :</p>
+                    <ul class="list-group list-group-flush">
+                        @foreach ($posts->take(5) as $post)
+                            <li class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    @if ($post->image)
+                                        <img src="{{ asset('post-images/' . $post->image) }}"
+                                            alt="{{ $post->category->name }}" class="me-2" width="140"
+                                            height="100">
+                                    @else
+                                        <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
+                                            class="me-2 bg-dark" width="140" height="100">
+                                    @endif
+                                    <a href="{{ url("/posts-{$post->slug}") }}"
+                                        class="text-decoration-none text-dark">{{ $post->title }}</a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <hr class="my-4">
+
+                    <p class="mt-3">Kategori :</p>
+                    <ul class="list-group list-group-flush">
+                        <div id="categoriesContainer">
+                            @foreach ($categories as $category)
                                 <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                                        @if ($post->image)
-                                            <img src="{{ asset('post-images/' . $post->image) }}"
-                                                alt="{{ $post->category->name }}" class="me-2" width="60"
-                                                height="50">
-                                        @else
-                                            <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
-                                                class="me-2 bg-dark" width="60" height="50">
-                                        @endif
-                                        <a href="{{ url("/posts-{$post->slug}") }}"
-                                            class="text-decoration-none text-dark"> {{ $post->title }}</a>
+                                    <div class="col-md-12 category-item">
+                                        <a href="/posts?category={{ $category->slug }}"
+                                            class="text-decoration-none text-dark">
+                                            {{ $category->name }}
+                                        </a>
+
                                     </div>
                                 </li>
                             @endforeach
-                        </ul>
-                        <hr class="my-4">
-
-                        <p class="mt-3">Kategori :</p>
-                        <ul class="list-group list-group-flush">
-                            <div id="categoriesContainer">
-                                @foreach ($categories as $category)
-                                    <li class="list-group-item">
-                                        <div class="col-md-12 category-item">
-                                            <a href="/posts?category={{ $category->slug }}"
-                                                class="text-decoration-none text-dark">
-                                                {{ $category->name }}
-                                            </a>
-
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </div>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4 mt-3 d-md-none d-block">
-                        <p>Postingan Terpopuler :</p>
-                        <ul class="list-group list-group-flush">
-                            @foreach ($posts->sortByDesc('click_count')->take(5) as $post)
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                                        @if ($post->image)
-                                            <img src="{{ asset('post-images/' . $post->image) }}"
-                                                alt="{{ $post->category->name }}" class="me-2" width="60"
-                                                height="50">
-                                        @else
-                                            <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
-                                                class="me-2 bg-dark" width="60" height="50">
-                                        @endif
-                                        <a href="{{ url("/posts-{$post->slug}") }}"
-                                            class="text-decoration-none text-dark">{{ $post->title }}</a>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <hr class="my-4">
-
-                        <p class="mt-3">Postingan Terbaru :</p>
-                        <ul class="list-group list-group-flush">
-                            @foreach ($posts->take(5) as $post)
-                                <li class="list-group-item">
-                                    <div class="d-flex align-items-center">
-                                        @if ($post->image)
-                                            <img src="{{ asset('post-images/' . $post->image) }}"
-                                                alt="{{ $post->category->name }}" class="me-2" width="60"
-                                                height="50">
-                                        @else
-                                            <img src="{{ asset('img/default.png') }}" alt="{{ $post->category->name }}"
-                                                class="me-2 bg-dark" width="60" height="50">
-                                        @endif
-                                        <a href="{{ url("/posts-{$post->slug}") }}"
-                                            class="text-decoration-none text-dark">{{ $post->title }}</a>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <hr class="my-4">
-
-                        <p class="mt-3">Kategori :</p>
-                        <ul class="list-group list-group-flush">
-                            <div id="categoriesContainer">
-                                @foreach ($categories as $category)
-                                    <li class="list-group-item">
-                                        <div class="col-md-12 category-item">
-                                            <a href="/posts?category={{ $category->slug }}"
-                                                class="text-decoration-none text-dark">
-                                                {{ $category->name }}
-                                            </a>
-
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </div>
-                        </ul>
-                    </div>
+                        </div>
+                    </ul>
                 </div>
             </div>
+        </div>
     </section>
 
     {{-- Script Copy Link --}}

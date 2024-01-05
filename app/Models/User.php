@@ -20,6 +20,7 @@ class User extends Authenticatable
         'image',
         'name',
         'username',
+        'jekel',
         'email',
         'password',
     ];
@@ -42,6 +43,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Boot the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($user) {
+            // Hapus semua pos terkait pengguna saat pengguna dihapus
+            $user->posts()->delete();
+            // Tambahkan entitas lain yang ingin Anda hapus
+        });
+    }
+
     public function posts()
     {
         return $this->hasMany(Post::class);

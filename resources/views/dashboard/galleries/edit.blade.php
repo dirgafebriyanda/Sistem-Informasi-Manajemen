@@ -44,9 +44,8 @@
                         </div>
                         <div class="mb-3 row">
                             <div class="col-md-12">
-                                <label for="name" class="form-label">Ket</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    id="name" name="name" value="{{ old('name', $gallery->name) }}" autofocus>
+                                <textarea class="form-control @error('name') is-invalid @enderror" id="name" name="name" autofocus
+                                    rows="4">{{ old('name', $gallery->name) }}</textarea>
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}

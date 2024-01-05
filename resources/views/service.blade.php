@@ -13,7 +13,7 @@
             </div>
             <div class="row mt-3" style="overflow: hidden">
                 <div class="col-md-4 mb-4" data-aos="slide-up">
-                    <div class="card bg-success text-light card-home">
+                    <div class="card bg-dark text-light card-home">
                         <div class="card-body text-center">
                             <i class="fas fa-leaf fa-2x mb-3"></i> <!-- Ikon daun dari Font Awesome -->
                             <h5 class="card-title fw-bold">Menambah Berat Daun</h5>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-md-4 mb-4" data-aos="slide-up">
-                    <div class="card bg-success text-light card-home">
+                    <div class="card bg-dark text-light card-home">
                         <div class="card-body text-center">
                             <i class="fas fa-stroopwafel fa-2x mb-3"></i> <!-- Ikon reset dari Font Awesome -->
                             <h5 class="card-title fw-bold">Ganti atau Stel Ulang Senar</h5>
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="col-md-4 mb-4" data-aos="slide-up">
-                    <div class="card bg-success text-light card-home">
+                    <div class="card bg-dark text-light card-home">
                         <div class="card-body text-center">
                             <i class="fas fa-low-vision fa-2x mb-3"></i> <!-- Ikon mata ayam dari Font Awesome -->
                             <h5 class="card-title fw-bold">Ganti Mata Ayam</h5>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="slide-up">
-                    <div class="card bg-success text-light card-home">
+                    <div class="card bg-dark text-light card-home">
                         <div class="card-body text-center">
                             <i class="fas fa-tools fa-2x mb-3"></i> <!-- Ikon alat dari Font Awesome -->
                             <h5 class="card-title fw-bold">Service Patah</h5>
@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="col-md-4 mb-4" data-aos="slide-up">
-                    <div class="card bg-success text-light card-home">
+                    <div class="card bg-dark text-light card-home">
                         <div class="card-body text-center">
                             <i class="fas fa-grip-lines-vertical fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
                             <h5 class="card-title fw-bold">Ganti atau Stel Grip</h5>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="slide-up">
-                    <div class="card bg-success text-light card-home">
+                    <div class="card bg-dark text-light card-home">
                         <div class="card-body text-center">
                             <i class="fas fa-ring fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
                             <h5 class="card-title fw-bold">Ganti Tutup Grip</h5>
