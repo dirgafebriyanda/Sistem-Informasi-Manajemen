@@ -35,6 +35,8 @@
                 </div>
             </div>
         </main>
+        <img src="{{ asset('img/wave/wave-top.png') }}" class="img-fluid" alt="">
+
     </section>
 
     <script>

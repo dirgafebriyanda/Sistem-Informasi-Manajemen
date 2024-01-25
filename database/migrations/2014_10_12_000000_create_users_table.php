@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
        Schema::create('users', function (Blueprint $table) {
     $table->id();
-    $table->string('image')->nullable(); // Menambahkan kolom image dan memperbolehkan nilai kosong
+    $table->string('image')->nullable();
     $table->string('name');
     $table->string('username')->unique();
     $table->enum('jekel',['laki-laki','perempuan'])->nullable();

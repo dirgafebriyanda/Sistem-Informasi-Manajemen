@@ -131,5 +131,7 @@
                 </div>
             </div>
         </div>
+        <img src="{{ asset('img/wave/wave-top.png') }}" class="img-fluid" alt="">
+
     </section>
 @endsection

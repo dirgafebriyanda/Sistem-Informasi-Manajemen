@@ -27,7 +27,7 @@
 
             <div class="col-md-6">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-3">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -37,9 +37,6 @@
                                         <div class="alert alert-success text-center" id="notif" role="alert">
                                             {{ session('success') }}
                                         </div>
-                                        <audio class="d-none" id="audio" controls autoplay>
-                                            <source src="{{ asset('sound/notif.wav') }}">
-                                        </audio>
                                     @endif
                                     @if (session()->has('loginError'))
                                         <div class="alert alert-danger  text-center alert-dismissible fade show"
@@ -55,7 +52,7 @@
                                         <div class="form-group">
                                             <input type="text" name="login"
                                                 class="form-control form-control-user @error('login') is-invalid @enderror"
-                                                id="login" name aria-describedby="emailHelp"
+                                                id="login" aria-describedby="emailHelp"
                                                 placeholder="Enter Email or Username..." autofocus required
                                                 value="{{ old('login') }}">
                                             @error('login')
@@ -70,8 +67,8 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
+                                                <label class="custom-control-label" for="customCheck">Show
+                                                    Password</label>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
@@ -120,6 +117,18 @@
                 });
         }
         setTimeout(hideAlert, 3000);
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#customCheck').change(function() {
+                var passwordInput = $('#password');
+                if ($(this).is(':checked')) {
+                    passwordInput.attr('type', 'text');
+                } else {
+                    passwordInput.attr('type', 'password');
+                }
+            });
+        });
     </script>
 </body>
 

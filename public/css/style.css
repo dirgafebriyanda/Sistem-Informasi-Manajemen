@@ -42,24 +42,7 @@
   }
 
 
-.card-home {
-  border-radius: 20px 90px 20px 90px;
-  background-color: #ffffff;
-  width: 100%;
-}
 
-
-.btn-home {
-  border-radius: 20px 50px 20px 50px;
-}
-.btn-homei {
-  border-radius: 20px 50px 20px 50px;
-  background-color: #ffffff;
-}
-.btn-homei:hover {
-  border-radius: 20px 50px 20px 50px;
-  background-color: #e3e0e0;
-}
 
   #btn-back-to-top {
   position: fixed;

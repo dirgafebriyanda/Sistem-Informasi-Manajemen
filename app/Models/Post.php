@@ -48,6 +48,7 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -56,5 +57,15 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function like()
+    {
+        return $this->hasMany(Like::class);
+    }
+    
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

@@ -38,9 +38,9 @@
                         yang terjangkau, anda tetap puas dengan hasilnya. Tunggu apa lagi, buruan !!!</p>
                     <div>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#formPemesanan"
-                            class="btn btn-success hvr-grow text-light fw-bold mt-3 me-2 btn-home">Pesan Sekarang</a>
+                            class="btn btn-success hvr-grow text-light fw-bold mt-3 me-2 rounded-5">Pesan Sekarang</a>
                         <a href="https://wa.me/6285266528221?text=Saya%20ingin%20konsultasi%20tentang..."
-                            class="btn btn-primary hvr-grow text-light fw-bold mt-3 btn-home">Konsultasi</a>
+                            class="btn btn-primary hvr-grow text-light fw-bold mt-3 rounded-5">Konsultasi</a>
                     </div>
 
                 </div>
@@ -57,18 +57,19 @@
             <span class="visually-hidden">Next</span>
         </button> --}}
         </div>
+        <img src="{{ asset('img/wave/wave-hero.png') }}" class="img-fluid" alt="">
     </section>
     <!-- akhir slide -->
 
     <!-- alasan -->
-    <section id="alasan">
+    <section id="alasan" class="mt-5">
         <div class="container-fluid text-center">
 
             <h2 class="fw-bold text-center">Alasan Mengapa Anda Harus Memilih Kami?</h2>
 
             <div class="row mt-4" style="overflow: hidden">
                 <div class="col-lg-4 py-4" data-aos="slide-up">
-                    <div class="card  text-dark hvr-float card-home" style="background-color:#a2d9ff;">
+                    <div class="card  text-light hvr-float " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-headset fa-3x mb-3"></i>
                             <h5 class="card-title">Pelayanan Pelanggan 24/7</h5>
@@ -82,7 +83,7 @@
                 <!-- Menambahkan ikon Font Awesome ke alasan lainnya -->
                 <!-- Anda dapat mengganti ikon dengan ikon Font Awesome lainnya sesuai kebutuhan -->
                 <div class="col-lg-4 py-4" data-aos="slide-up">
-                    <div class="card  text-dark hvr-float card-home  " style="background-color:#a2d9ff;">
+                    <div class="card  text-light hvr-float   " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-award fa-3x mb-3"></i>
                             <h5 class="card-title">Kualitas Unggul</h5>
@@ -92,7 +93,7 @@
                 </div>
 
                 <div class="col-lg-4 py-4" data-aos="slide-up">
-                    <div class="card  text-dark hvr-float card-home  " style="background-color:#a2d9ff;">
+                    <div class="card  text-light hvr-float   " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-lightbulb fa-3x mb-3"></i>
                             <h5 class="card-title">Inovasi Terbaru</h5>
@@ -103,7 +104,7 @@
                 </div>
 
                 <div class="col-lg-4 py-4" data-aos="slide-up">
-                    <div class="card  text-dark hvr-float card-home" style="background-color:#a2d9ff;">
+                    <div class="card  text-light hvr-float " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-users fa-3x mb-3"></i>
                             <h5 class="card-title">Tim Profesional</h5>
@@ -114,7 +115,7 @@
                 </div>
 
                 <div class="col-lg-4 py-4" data-aos="slide-up">
-                    <div class="card  text-dark hvr-float card-home  " style="background-color:#a2d9ff;">
+                    <div class="card  text-light hvr-float   " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-hand-holding-heart fa-3x mb-3"></i>
                             <h5 class="card-title">Kemudahan Penggunaan</h5>
@@ -126,7 +127,7 @@
                 </div>
 
                 <div class="col-lg-4 py-4" data-aos="slide-up">
-                    <div class="card  text-dark hvr-float card-home " style="background-color:#a2d9ff;">
+                    <div class="card  text-light hvr-float  " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-shield-alt fa-3x mb-3"></i>
                             <h5 class="card-title">Keandalan</h5>
@@ -137,25 +138,20 @@
                 </div>
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#a2d9ff" fill-opacity="1"
-                d="M0,320L30,282.7C60,245,120,171,180,154.7C240,139,300,181,360,202.7C420,224,480,224,540,186.7C600,149,660,75,720,74.7C780,75,840,149,900,165.3C960,181,1020,139,1080,112C1140,85,1200,75,1260,90.7C1320,107,1380,149,1410,170.7L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
-            </path>
-        </svg>
-
+        <img src="{{ asset('img/wave/wave-top.png') }}" class="img-fluid" alt="">
     </section>
     <!-- akhir alasan -->
 
     <!-- layanan -->
     <section id="layanan">
-        <div class="container-fluid"style="background-color: #a2d9ff">
+        <div class="container-fluid"style="background-color: #000000">
             <div class="row  justify-content-center">
-                <h2 class="fw-bold text-center">Layanan apa saja yang kami berikan?</h2>
-                <div class="row mt-3" style="overflow: hidden">
-                    <div class="col-md-4 mb-2" data-aos="slide-up">
-                        <div class="card card-home hvr-float">
+                <h2 class="fw-bold text-center text-light">Layanan apa saja yang kami berikan?</h2>
+                <div class="row mt-3 " style="overflow: hidden">
+                    <div class="col-md-4 py-4" data-aos="slide-up">
+                        <div class="card  hvr-float">
                             <div class="card-body text-center">
-                                <i class="fas fa-leaf fa-2x mb-3"></i> <!-- Ikon daun dari Font Awesome -->
+                                <i class="fas fa-leaf fa-3x mb-3"></i> <!-- Ikon daun dari Font Awesome -->
                                 <h5 class="card-title fw-bold">Menambah Berat Daun</h5>
                                 <p class="card-text">Layanan menambah berat daun raket badminton & tennis untuk
                                     meningkatkan
@@ -165,6 +161,7 @@
                                     50.000</p>
                                 <div>
                                     <i class="fas fa-star text-warning"></i>
+
                                     <i class="fas fa-star text-warning"></i>
                                     <i class="fas fa-star text-warning"></i>
                                     <i class="fas fa-star text-warning"></i>
@@ -174,10 +171,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 mb-2" data-aos="slide-up">
-                        <div class="card card-home hvr-float">
+                    <div class="col-md-4 py-4" data-aos="slide-up">
+                        <div class="card  hvr-float">
                             <div class="card-body text-center">
-                                <i class="fas fa-stroopwafel fa-2x mb-3"></i> <!-- Ikon reset dari Font Awesome -->
+                                <i class="fas fa-stroopwafel fa-3x mb-3"></i> <!-- Ikon reset dari Font Awesome -->
                                 <h5 class="card-title fw-bold">Ganti atau Stel Ulang Senar</h5>
                                 <p class="card-text">Layanan penggantian atau penyetelan ulang senar raket badminton &
                                     tennis
@@ -195,10 +192,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 mb-2" data-aos="slide-up">
-                        <div class="card card-home hvr-float">
+                    <div class="col-md-4 py-4" data-aos="slide-up">
+                        <div class="card  hvr-float">
                             <div class="card-body text-center">
-                                <i class="fas fa-low-vision fa-2x mb-3"></i> <!-- Ikon mata ayam dari Font Awesome -->
+                                <i class="fas fa-low-vision fa-3x mb-3"></i> <!-- Ikon mata ayam dari Font Awesome -->
                                 <h5 class="card-title fw-bold">Ganti Mata Ayam</h5>
                                 <p class="card-text">Layanan penggantian mata ayam pada raket badminton & tennis.
                                 </p>
@@ -214,10 +211,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-2" data-aos="slide-up">
-                        <div class="card card-home hvr-float">
+                    <div class="col-md-4 py-4" data-aos="slide-up">
+                        <div class="card  hvr-float">
                             <div class="card-body text-center">
-                                <i class="fas fa-tools fa-2x mb-3"></i> <!-- Ikon alat dari Font Awesome -->
+                                <i class="fas fa-tools fa-3x mb-3"></i> <!-- Ikon alat dari Font Awesome -->
                                 <h5 class="card-title fw-bold">Service Patah</h5>
                                 <p class="card-text">Layanan perbaikan raket badminton & tennis yang patah.</p>
                                 <p class="card-text fw-bold">Rp. 75.000 - Rp.
@@ -233,10 +230,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 mb-2" data-aos="slide-up">
-                        <div class="card card-home hvr-float">
+                    <div class="col-md-4 py-4" data-aos="slide-up">
+                        <div class="card  hvr-float">
                             <div class="card-body text-center">
-                                <i class="fas fa-grip-lines-vertical fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
+                                <i class="fas fa-grip-lines-vertical fa-3x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
                                 <h5 class="card-title fw-bold">Ganti atau Stel Grip</h5>
                                 <p class="card-text">Layanan penggantian atau penyetelan ulang grip raket badminton &
                                     tennis.</p>
@@ -251,10 +248,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-2" data-aos="slide-up">
-                        <div class="card card-home hvr-float">
+                    <div class="col-md-4 py-4" data-aos="slide-up">
+                        <div class="card  hvr-float">
                             <div class="card-body text-center">
-                                <i class="fas fa-ring fa-2x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
+                                <i class="fas fa-ring fa-3x mb-3"></i> <!-- Ikon grip dari Font Awesome -->
                                 <h5 class="card-title fw-bold">Ganti Tutup Grip</h5>
                                 <p class="card-text">Layanan penggantian tutup grip raket raket badminton & tennis.</p>
                                 <p class="card-text fw-bold">Rp. 25.000 - Rp.
@@ -272,11 +269,7 @@
                 </div>
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#a2d9ff" fill-opacity="1"
-                d="M0,160L26.7,154.7C53.3,149,107,139,160,160C213.3,181,267,235,320,234.7C373.3,235,427,181,480,165.3C533.3,149,587,171,640,170.7C693.3,171,747,149,800,165.3C853.3,181,907,235,960,261.3C1013.3,288,1067,288,1120,250.7C1173.3,213,1227,139,1280,117.3C1333.3,96,1387,128,1413,144L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z">
-            </path>
-        </svg>
+        <img src="{{ asset('img/wave/wave-btm.png') }}" class="img-fluid" alt="">
     </section>
     <!-- akhir layanan -->
 
@@ -292,44 +285,40 @@
             <div class="row mt-4 fs-5 justify-content-center" style="overflow: hidden">
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/1.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  hvr-zoom" />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/2.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark " />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/3.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  " />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/4.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  " />
                 </div>
                 <div class="col-md-4 py-4" data-aos="slide-up">
                     <img src="{{ asset('img/5.png') }}" alt="Gambar Default"
-                        class="w-100 h-100 img-thumbnail bg-dark  card-home" />
+                        class="w-100 h-100 img-thumbnail bg-dark  " />
                 </div>
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#a2d9ff" fill-opacity="1"
-                d="M0,320L30,282.7C60,245,120,171,180,154.7C240,139,300,181,360,202.7C420,224,480,224,540,186.7C600,149,660,75,720,74.7C780,75,840,149,900,165.3C960,181,1020,139,1080,112C1140,85,1200,75,1260,90.7C1320,107,1380,149,1410,170.7L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
-            </path>
-        </svg>
+        <img src="{{ asset('img/wave/wave-top.png') }}" class="img-fluid" alt="">
     </section>
     <!-- Akhir Galeri -->
 
     <!-- Ulasan -->
     <section id="ulasan"> <!-- Reduced top and bottom padding -->
-        <div class="container-fluid justify-content-center" style="background-color: #a2d9ff">
+        <div class="container-fluid justify-content-center" style="background-color: #000000">
             <div class="row py-3 text-center"> <!-- Reduced top margin -->
                 <div class="col-md-12">
-                    <h2 class="fw-bold">Apa kata mereka yang sudah menggunakan jasa kami?</h2>
+                    <h2 class="fw-bold text-light">Apa kata mereka yang sudah menggunakan jasa kami?</h2>
                 </div>
                 <div class="col-md-12 mt-3">
                     <div class="text-center d-flex justify-content-center mt-0">
-                        <button type="button" class="fw-bold btn btn-homei hvr-grow" data-bs-toggle="modal"
+                        <button type="button" class="fw-bold btn btn-light rounded-4 hvr-grow" data-bs-toggle="modal"
                             data-bs-target="#ulasanModal">
                             Berikan Ulasan
                         </button>
@@ -337,25 +326,21 @@
                 </div>
             </div>
             @if ($reviews->isEmpty())
-                <div class="container py-2"> <!-- Reduced top and bottom padding -->
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6">
-                            <div class="card  hvr-float text-center card-home">
-                                <div class="card-body">
-                                    <p class="display-4">Belum ada ulasan.</p>
-                                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="card  hvr-float text-center ">
+                            <div class="card-body">
+                                <p class="display-4">Belum ada ulasan.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            @else
-                <div class="row mt-2 justify-content-center">
+                @else
                     <div class="owl-carousel">
                         @foreach ($reviews as $review)
                             <div class="item">
                                 <div class="col-md-6" style="width: 95%;">
                                     <!-- Adjusted width and reduced top and bottom padding -->
-                                    <div class="card w-100 text-center card-home" data-aos="slide-up">
+                                    <div class="card w-100 text-center " data-aos="slide-up">
                                         <div class="card-body">
                                             <p>
                                                 <span class="fw-bold"><i class="fas fa-user-circle fa-lg"></i>
@@ -382,17 +367,13 @@
                 </div>
             @endif
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#a2d9ff" fill-opacity="1"
-                d="M0,160L26.7,154.7C53.3,149,107,139,160,160C213.3,181,267,235,320,234.7C373.3,235,427,181,480,165.3C533.3,149,587,171,640,170.7C693.3,171,747,149,800,165.3C853.3,181,907,235,960,261.3C1013.3,288,1067,288,1120,250.7C1173.3,213,1227,139,1280,117.3C1333.3,96,1387,128,1413,144L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z">
-            </path>
-        </svg>
+        <img src="{{ asset('img/wave/wave-btm.png') }}" class="img-fluid" alt="">
     </section>
     <!-- Akhir Ulasan -->
 
     <!-- Blog & Berita -->
-    <section id="blog"> <!-- Reduced top and bottom padding -->
-        <div class="container-fluid justify-content-center">
+    <section id="blog">
+        <div class="container-fluid justify-content-center mt-5">
             <div class="row text-center"> <!-- Reduced top margin -->
                 <div class="col-md-12">
                     <h2 class="fw-bold">Seputar berita dan informasi olahraga.</h2>
@@ -402,7 +383,7 @@
                 <div class="container py-2">
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
-                            <div class="card hvr-float text-center card-home" style="background-color:#a2d9ff;">
+                            <div class="card hvr-float text-center " style="background-color:#a2d9ff;">
                                 <div class="card-body">
                                     <p class="display-4">Belum ada.</p>
                                 </div>
@@ -411,7 +392,7 @@
                     </div>
                 </div>
             @else
-                <div class="row">
+                <div class="row mt-4">
                     <div class="owl-carousel">
                         @foreach ($posts as $post)
                             <div class="item">
@@ -454,6 +435,7 @@
                 </div>
             @endif
         </div>
+        <img src="{{ asset('img/wave/wave-top.png') }}" class="img-fluid" alt="">
     </section>
     <!-- Akhir Blog & Berita -->
 
@@ -517,11 +499,11 @@
                 </div>
                 <div class="modal-body">
                     <form id="orderForm">
-                        <input type="text" class="form-control mb-2" id="nama" name="nama"
+                        <input type="text" class="form-control mb-4" id="nama" name="nama"
                             placeholder="Nama Lengkap" required>
-                        <input type="text" class="form-control mb-2" id="kontak" name="kontak"
+                        <input type="text" class="form-control mb-4" id="kontak" name="kontak"
                             placeholder="Email atau No Hp" required>
-                        <textarea id="pesan" class="form-control mb-2" name="pesan" rows="4" placeholder="Pesan" required></textarea>
+                        <textarea id="pesan" class="form-control mb-4" name="pesan" rows="4" placeholder="Pesan" required></textarea>
                     </form>
                 </div>
                 <div class="modal-footer">

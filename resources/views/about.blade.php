@@ -31,8 +31,10 @@
             </div>
         </div>
     </div>
+    <img src="{{ asset('img/wave/wave-hero.png') }}" class="img-fluid" alt="">
+
     <!-- Di dalam HTML -->
-    <section id="tentang">
+    <section id="tentang" class="mt-4">
         <div class="container-fluid  py-3">
             <h1 class="fw-bold">Berdiri sejak 2008</h1>
             <div class="row justify-content-center">
@@ -51,16 +53,20 @@
                     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner  card-home">
                             <div class="carousel-item active">
-                                <img src="{{ asset('img/tentang/tennis 1.jpeg') }}" class="d-block w-100" alt="Slide 1">
+                                <img src="{{ asset('img/tentang/tennis 1.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('img/tentang/tennis 2.jpeg') }}" class="d-block w-100" alt="Slide 2">
+                                <img src="{{ asset('img/tentang/tennis 2.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('img/tentang/tennis 3.jpeg') }}" class="d-block w-100" alt="Slide 3">
+                                <img src="{{ asset('img/tentang/tennis 3.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 3">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('img/tentang/tennis 4.jpeg') }}" class="d-block w-100" alt="Slide 4">
+                                <img src="{{ asset('img/tentang/tennis 4.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 4">
                             </div>
                         </div>
                     </div>
@@ -124,16 +130,20 @@
                     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner  card-home">
                             <div class="carousel-item active">
-                                <img src="{{ asset('img/tentang/badminton 1.jpeg') }}" class="d-block w-100" alt="Slide 1">
+                                <img src="{{ asset('img/tentang/badminton 1.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('img/tentang/badminton 2.jpeg') }}" class="d-block w-100" alt="Slide 2">
+                                <img src="{{ asset('img/tentang/badminton 2.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('img/tentang/badminton 3.jpeg') }}" class="d-block w-100" alt="Slide 3">
+                                <img src="{{ asset('img/tentang/badminton 3.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 3">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('img/tentang/badminton 4.jpeg') }}" class="d-block w-100" alt="Slide 4">
+                                <img src="{{ asset('img/tentang/badminton 4.jpeg') }}" class="d-block w-100 img-thumbnail"
+                                    alt="Slide 4">
                             </div>
                         </div>
                     </div>
@@ -167,5 +177,7 @@
                 </div>
             </div>
         </div>
+        <img src="{{ asset('img/wave/wave-top.png') }}" class="img-fluid" alt="">
+
     </section>
 @endsection

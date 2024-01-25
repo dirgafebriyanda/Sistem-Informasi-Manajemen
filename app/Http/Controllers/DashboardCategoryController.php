@@ -16,10 +16,11 @@ class DashboardCategoryController extends Controller
     public function index()
     {
         $this->authorize('admin');
+        $categories = Category::All();
         return view('dashboard.categories.index', [
             'title' => 'Categories',
             'active' => 'categories',
-            'categories' => Category::All()
+            'categories' => $categories
         ]);
     }
 

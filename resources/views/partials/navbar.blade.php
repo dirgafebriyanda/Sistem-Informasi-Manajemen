@@ -10,23 +10,23 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'beranda' ? 'active' : '' }} hvr-underline-from-center"
-                        href="/">Beranda</a>
+                        href="/">BERANDA</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'layanan' ? 'active' : '' }} hvr-underline-from-center"
-                        href="/layanan">Layanan</a>
+                        href="/layanan">LAYANAN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'galeri' ? 'active' : '' }} hvr-underline-from-center"
-                        href="/galeri">Galeri</a>
+                        href="/galeri">GALERI</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'blog' ? 'active' : '' }} hvr-underline-from-center"
-                        href="/posts">Blog</a>
+                        href="/posts">BLOG</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'tentang' ? 'active' : '' }} hvr-underline-from-center"
-                        href="/tentang-kami">Tentang</a>
+                        href="/tentang-kami">TENTANG</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link {{ $active === 'categories' ? 'active' : '' }} hvr-underline-from-center"
@@ -58,7 +58,7 @@
                 @else
                     <li class="navbar-item">
                         <a href="/login" class="nav-link {{ $active === 'login' ? 'active' : '' }} fas fa-sign-in-alt ">
-                            Login</a>
+                        </a>
                     </li>
                 </ul>
             @endauth

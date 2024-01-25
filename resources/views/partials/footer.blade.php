@@ -1,4 +1,4 @@
-        <footer class="bg-dark text-white" id="kontak-kami">
+        <footer class="text-white" id="kontak-kami" style="background-color: #000000">
             <div class="container ">
                 <div class="row mb-4">
                     <h2 class="text-center text-light fw-bold mt-3">Hubungi kami</h2>
@@ -56,7 +56,7 @@
                 </section>
             </div>
             <div class="col-md-12">
-                <div class="bg-dark text-white p-2 text-end">
+                <div class=" text-white p-2 text-end" style="background-color: #000000">
                     <a class="text-white text-decoration-none me-3" href="{{ route('saran') }}">Kritik dan Saran</a>
                     <a class="text-white text-decoration-none" href="/kebijakan-privasi">Kebijakan Privasi</a>
                 </div>

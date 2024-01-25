@@ -40,7 +40,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $posts = Post::All();
-        $categories = Category::All();
+        $categories = Category::orderBy('name')->get();
         return view('post', [
             'title' => 'Blog & Berita',
             'active' => 'blog',
