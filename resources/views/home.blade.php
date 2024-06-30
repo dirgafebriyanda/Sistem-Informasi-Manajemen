@@ -67,8 +67,8 @@
 
             <h2 class="fw-bold text-center">Alasan Mengapa Anda Harus Memilih Kami?</h2>
 
-            <div class="row mt-4" style="overflow: hidden">
-                <div class="col-lg-4 py-4" data-aos="slide-up">
+            <div class="row mt-4 flex-nowrap" style="overflow: hidden">
+                <div class="col-sm-4 py-4" data-aos="slide-up">
                     <div class="card  text-light hvr-float " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-headset fa-3x mb-3"></i>
@@ -82,7 +82,7 @@
 
                 <!-- Menambahkan ikon Font Awesome ke alasan lainnya -->
                 <!-- Anda dapat mengganti ikon dengan ikon Font Awesome lainnya sesuai kebutuhan -->
-                <div class="col-lg-4 py-4" data-aos="slide-up">
+                <div class="col-sm-4 py-4" data-aos="slide-up">
                     <div class="card  text-light hvr-float   " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-award fa-3x mb-3"></i>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 py-4" data-aos="slide-up">
+                <div class="col-sm-4 py-4" data-aos="slide-up">
                     <div class="card  text-light hvr-float   " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-lightbulb fa-3x mb-3"></i>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 py-4" data-aos="slide-up">
+                <div class="col-sm-4 py-4" data-aos="slide-up">
                     <div class="card  text-light hvr-float " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-users fa-3x mb-3"></i>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 py-4" data-aos="slide-up">
+                <div class="col-sm-4 py-4" data-aos="slide-up">
                     <div class="card  text-light hvr-float   " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-hand-holding-heart fa-3x mb-3"></i>
@@ -126,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 py-4" data-aos="slide-up">
+                <div class="col-sm-4 py-4" data-aos="slide-up">
                     <div class="card  text-light hvr-float  " style="background-color:#000000;">
                         <div class="card-body">
                             <i class="fas fa-shield-alt fa-3x mb-3"></i>

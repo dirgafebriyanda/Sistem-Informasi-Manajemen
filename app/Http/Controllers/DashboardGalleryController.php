@@ -29,7 +29,7 @@ class DashboardGalleryController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:20048',
         ]);
 
         if ($request->file('image')) {

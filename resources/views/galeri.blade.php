@@ -66,7 +66,7 @@
                                                 class="btn btn-sm btn-dark">Unduh</a>
                                         </div>
                                         <small
-                                            class="text-body-secondary">${gallery.created_at}</small>
+                                                class="text-body-secondary">{{ $gallery->created_at->diffForHumans(null, true) }}</small>
                                     </div>
                                 </div>
                             </div>
